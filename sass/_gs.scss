@@ -21,7 +21,29 @@ $gs-gutter-width:         10px     !default;
 
 // UTIL stuff
 // Get values by label
+@function gs-index-of ($item, $list) {
+	$count: 0;
+	@each $curr in $list {
+		$count: $count+1;
+		@if $curr == $item {
+			@return $count;
+		}
+	}
+	@return -1;
+}
+
+@function gs-label-exists ($media) {
+	@if gs-index-of($media, $gs-labels) < 0 {
+		@warn "[gs-label-exists] Media \"#{$media}\" was not found.";
+		@return 0;
+	}
+	@return 1;
+}
+// Get values by label
 @function gs-value ($label: nth($gs-labels, 1), $l: $gs-column-width) {
+	@if gs-label-exists($label) == 0 {
+		@return null;
+	}
 	$count: 0;
 	@each $item in $gs-labels {
 		$count: $count + 1;
@@ -49,6 +71,9 @@ $gs-gutter-width:         10px     !default;
 }
 
 @function gs-get-column-size ($media) {
+	@if gs-label-exists($media) == 0 {
+		@return 0;
+	}
 	$gs-column-width: null !default;
 	$gs-site-width: null !default;
 	$cols: gs-value($media, $gs-column-num);
@@ -69,6 +94,9 @@ $gs-gutter-width:         10px     !default;
 // $media:[first defined media] the name of configured media to fetch data
 // $extra:[0] extra size do be added (or removed) to the return value
 @function gs-fixed-column ($n: gs-value($l: $gs-column-num), $media: gs-value($l: $gs-labels), $extra: 0) {
+	@if gs-label-exists($media) == 0 {
+		@return 0;
+	}
 	$width: gs-get-column-size($media);
 	$cols: gs-value($media, $gs-column-num);
 	$g: gutter(1, $media);
@@ -83,7 +111,9 @@ $gs-gutter-width:         10px     !default;
 // $n:[total of columns] number of columns (if none is passed, consider a full-width column) 
 // $media:[first defined media] the name of configured media to fetch data
 @function fluid-column ($n: gs-value($l: $gs-column-num), $media: gs-value($l: $gs-labels)) {
-
+	@if gs-label-exists($media) == 0 {
+		@return 0;
+	}
 	$cols: gs-value($media, $gs-column-num);
 	@if $n > $cols {
 		$n: $cols
@@ -96,20 +126,55 @@ $gs-gutter-width:         10px     !default;
 
 // PUBLIC //
 
+// Register grid system
+@mixin clear-grid-list () {
+	$gs-labels: null;
+	$gs-site-width: null;
+	$gs-column-num: null;
+	$gs-width-break-point: null;
+	$gs-gutter-width: null;
+}
+@mixin register-grid ($label, $site-width, $column-num, $gutter-width, $width-break-point: auto) {
+	@if gs-index-of($label, $gs-labels) < 0 {
+		@if $gs-labels == null {
+			$gs-labels: $label;
+			$gs-site-width: $site-width;
+			$gs-column-num: $column-num;
+			$gs-gutter-width: $gutter-width;
+			$gs-width-break-point: $width-break-point;
+		} @else {
+			$gs-labels: append($gs-labels, $label);
+			$gs-site-width: append($gs-site-width, $site-width);
+			$gs-column-num: append($gs-column-num, $column-num);
+			$gs-gutter-width: append($gs-gutter-width, $gutter-width);
+			$gs-width-break-point: append($gs-width-break-point, $width-break-point);
+		}
+	}
+}
+
 // Get gutter value
 @function gutter ($n: 1, $media: gs-value($l: $gs-labels)) {
+	@if gs-label-exists($media) == 0 {
+		@return 0;
+	}
 	@return gs-to-number(gs-value($media, $gs-gutter-width)) * $n * 1px;
 }
 
 // Get column value
 @function column ($n: gs-value($l: $gs-column-num), $media: gs-value($l: $gs-labels), $extra: 0) {
+	@if gs-label-exists($media) == 0 {
+		@return 0;
+	}
 	$gs-column-width: null !default;
 	$gs-site-width: null !default;
 	$width: 0;
 
 	// @debug "is? #{$media} / #{unit(gs-value($media, $gs-site-width))}";
-	@if unit(gs-value($media, $gs-site-width)) == "%" {
-		@return fluid-column($n, $media) * 1%;
+
+	@if gs-value($media, $gs-site-width) != null {
+		@if unit(gs-value($media, $gs-site-width)) == "%" {
+			@return fluid-column($n, $media) * 1%;
+		}
 	}
 	@return gs-fixed-column($n, $media, $extra);
 }
