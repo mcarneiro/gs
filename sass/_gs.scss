@@ -134,20 +134,44 @@ $gs-gutter-width:         10px     !default;
 	$gs-width-break-point: null;
 	$gs-gutter-width: null;
 }
-@mixin register-grid ($label, $site-width, $column-num, $gutter-width, $width-break-point: auto) {
+@mixin register-grid ($label, $width, $column-num, $gutter, $break-point: auto, $column: null) {
 	@if gs-index-of($label, $gs-labels) < 0 {
+
+		// if site-width is auto, column-num, gutter-width and column-width must have values
+		@if $width == auto {
+			@if type-of($column-num) == number {
+				@if type-of($gutter) == number {
+					@if type-of($column) == number {
+						$width: $column-num * $column + ($column-num - 1) * $gutter;
+					}
+				}
+			}
+		}
+
+		// if gutter-width is auto, column-num, site-width and column-width must have values
+		@if $gutter == auto {
+			@if type-of($width) == number {
+				@if type-of($column) == number {
+					@if $column-num == auto {
+						$column-num: floor($width / $column);
+					}
+					$gutter: ($width - $column * $column-num) / ($column-num - 1);
+				}
+			}
+		}
+
 		@if $gs-labels == null {
 			$gs-labels: $label;
-			$gs-site-width: $site-width;
+			$gs-site-width: $width;
 			$gs-column-num: $column-num;
-			$gs-gutter-width: $gutter-width;
-			$gs-width-break-point: $width-break-point;
+			$gs-gutter-width: $gutter;
+			$gs-width-break-point: $break-point;
 		} @else {
 			$gs-labels: append($gs-labels, $label);
-			$gs-site-width: append($gs-site-width, $site-width);
+			$gs-site-width: append($gs-site-width, $width);
 			$gs-column-num: append($gs-column-num, $column-num);
-			$gs-gutter-width: append($gs-gutter-width, $gutter-width);
-			$gs-width-break-point: append($gs-width-break-point, $width-break-point);
+			$gs-gutter-width: append($gs-gutter-width, $gutter);
+			$gs-width-break-point: append($gs-width-break-point, $break-point);
 		}
 	}
 }
