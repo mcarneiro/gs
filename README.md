@@ -1,4 +1,4 @@
-#GS - Semantic Grid System v0.2
+#GS - Semantic Grid System v0.3
 Flexible and easy-to-use gridsystem for SASS.
 
 ## About this project
@@ -52,16 +52,16 @@ There are some functions and mixins available for applying the grids:
 
 #### column function
 
-    @function column($n:FIRST_REGISTERED_TOTAL_COLUMNS, $media:FIRST_REGISTERED_MEDIA, $extra:0)
+    @function column($n:1, $grid:FIRST_REGISTERED_GRID, $extra:0)
 
 This function receives the number of columns, media and an extra value, if necessary. The box-model technique stays with the developer: If you prefer a `float` for some situation, `inline-block`, `table-cell`, etc:
 
     .my-class {
-        width: column(); // will write the total columns width of the first registered media
+        width: column(all); // will write full-size value for the first registered media
     }
     .nav-holver {
         float: left;
-        width: column(1);
+        width: column(); // will write the value of 1 column for the first registered media
         margin-right: gutter(); // check the next topic about gutter()
     }
     .content-holder {
@@ -70,13 +70,13 @@ This function receives the number of columns, media and an extra value, if neces
 
 #### gutter function
 
-    @function gutter($n:1, $media:FIRST_REGISTERED_MEDIA)
+    @function gutter($n:1, $grid:FIRST_REGISTERED_GRID)
 
 This function receives the number of "gutters" (gutter * n) and the media value:
 
     .nav-holver {
         float: left;
-        width: column(1);
+        width: column();
     }
     .content-holder {
         overflow: hidden;
@@ -85,14 +85,14 @@ This function receives the number of "gutters" (gutter * n) and the media value:
 
 #### row mixin
 
-    @mixin row($width:auto, $media:FIRST_REGISTERED_MEDIA)
+    @mixin row($width:auto, $grid:FIRST_REGISTERED_GRID)
 
 This mixin is usually used on lists. It can receive a width and media label:
 
     .some-list {
         @include row(); // will apply a negative margin-left with gutter value;
         li {
-            width: column(1);
+            width: column();
             margin-left: gutter();
             display: inline-block;
             vertical-align: middle;
@@ -101,7 +101,7 @@ This mixin is usually used on lists. It can receive a width and media label:
 
 #### Defining the current grid
 
-All functions has a `$media` parameter that is related to the label defined when registering a grid. Based on the last example, there's how to use another grid units for the implementation:
+All functions has a `$grid` parameter that is related to the label defined when registering a grid. Based on the last example, there's how to use another grid units for the implementation:
 
     @include register-grid(
         $label: "site-normal",
@@ -110,27 +110,27 @@ All functions has a `$media` parameter that is related to the label defined when
         $gutter: 10px);
 
     .some-list {
-        @include row($media: site-normal);
+        @include row($grid: site-normal);
         li {
-            width: column(1, $media: site-normal);
-            margin-left: gutter($media: site-normal);
+            width: column(1, $grid: site-normal);
+            margin-left: gutter($grid: site-normal);
             display: inline-block;
             vertical-align: middle;
         }
     }
 
-**Important!** If you ommit the `$media` parameter, the first registered gridsystem will be used.
+**Important!** If you ommit the `$grid` parameter, the first registered gridsystem will be used.
 
 #### media-query mixin
 
-    @mixin media-query($label:FIRST_REGISTERED_MEDIA, $media:screen)
+    @mixin media-query($label:FIRST_REGISTERED_GRID, $media:screen)
 
 This mixin can be used if you use sass media-query (inside the same css). It's just a simple wrapper just to place the media-query based on the registered data:
 
     .some-list {
         @include row();
         li {
-            width: column(1);
+            width: column();
             margin-left: gutter();
             display: inline-block;
             vertical-align: middle;
@@ -138,13 +138,13 @@ This mixin can be used if you use sass media-query (inside the same css). It's j
         @include media-query($media: site-normal) {
             @include row($media: site-normal);
             li {
-                width: column(1, $media: site-normal);
+                width: column($media: site-normal);
                 margin-left: gutter($media: site-normal);
             }
         }
     }
 
-Note that the $media parameter must be used on all calls. That's a SASS limitation regarding scopes.
+Note that the $media parameter must be used on all calls. That's a SASS limitation regarding scopes. Also, remember that @extend can't be used inside media-queries calls.
 
 ## Roadmap
 
@@ -155,9 +155,14 @@ Note that the $media parameter must be used on all calls. That's a SASS limitati
 
 ## Log history
 
+### 0.3
+* column() will write 1 column value by default and now has a "all" wildcard for writing a full-size value;
+* changed $media to $grid;
+* media-query mixin now accept "min-width";
+
 ### 0.2
 * Changes regarding the registration of grids;
 * Now it's possible to place a "auto" value for gutter and "site-width" and "column-num";
 
-###0.1
+### 0.1
 * First commit;
