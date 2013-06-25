@@ -61,6 +61,8 @@ $gs-gutter-width:         10px     !default;
 		@return $value / 1in;
 	} @else if unit($value) == "em" {
 		@return $value / 1em;
+	} @else if unit($value) == "rem" {
+		@return $value / 1rem;
 	}
 }
 

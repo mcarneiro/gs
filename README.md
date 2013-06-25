@@ -54,14 +54,14 @@ There are some functions and mixins available for applying the grids:
 
     @function column($n:1, $grid:FIRST_REGISTERED_GRID, $extra:0)
 
-This function receives the number of columns, media and an extra value, if necessary. The box-model technique stays with the developer: If you prefer a `float` for some situation, `inline-block`, `table-cell`, etc:
+This function receives the number of columns, grid and an extra value, if necessary. The box-model technique stays with the developer: If you prefer a `float` for some situation, `inline-block`, `table-cell`, etc:
 
     .my-class {
-        width: column(all); // will write full-size value for the first registered media
+        width: column(all); // will write full-size value for the first registered grid
     }
     .nav-holver {
         float: left;
-        width: column(); // will write the value of 1 column for the first registered media
+        width: column(); // will write the value of 1 column for the first registered grid
         margin-right: gutter(); // check the next topic about gutter()
     }
     .content-holder {
@@ -72,7 +72,7 @@ This function receives the number of columns, media and an extra value, if neces
 
     @function gutter($n:1, $grid:FIRST_REGISTERED_GRID)
 
-This function receives the number of "gutters" (gutter * n) and the media value:
+This function receives the number of "gutters" (gutter * n) and the grid value:
 
     .nav-holver {
         float: left;
@@ -87,7 +87,7 @@ This function receives the number of "gutters" (gutter * n) and the media value:
 
     @mixin row($width:auto, $grid:FIRST_REGISTERED_GRID)
 
-This mixin is usually used on lists. It can receive a width and media label:
+This mixin is usually used on lists. It can receive a `width` and `grid` label:
 
     .some-list {
         @include row(); // will apply a negative margin-left with gutter value;
@@ -136,10 +136,10 @@ This mixin can be used if you use sass media-query (inside the same css). It's j
             vertical-align: middle;
         }
         @include media-query($media: site-normal) {
-            @include row($media: site-normal);
+            @include row($grid: site-normal);
             li {
-                width: column($media: site-normal);
-                margin-left: gutter($media: site-normal);
+                width: column($grid: site-normal);
+                margin-left: gutter($grid: site-normal);
             }
         }
     }
@@ -154,6 +154,10 @@ Note that the $media parameter must be used on all calls. That's a SASS limitati
 * Create installer;
 
 ## Log history
+
+### 0.3.1
+* Minor fixes on the documentation;
+* gs-to-number now works with `rem`;
 
 ### 0.3
 * column() will write 1 column value by default and now has a "all" wildcard for writing a full-size value;
