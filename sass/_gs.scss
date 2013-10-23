@@ -1,5 +1,5 @@
 // @author Marcelo Miranda Carneiro - mcarneiro@gmail.com
-// @version 0.3
+// @version 0.3.1 https://github.com/mcarneiro/gs/#log-history
 
 // Usage
 // @include register-grid(wide, 1306px, 14, 10px, auto);
@@ -215,7 +215,7 @@ $gs-gutter-width:         10px     !default;
 }
 
 // get media query css wrapper
-@mixin media-query ($grid: gs-value($l: $gs-labels), $media: screen, $type: min-width) {
+@mixin media-query ($grid: gs-value($l: $gs-labels), $media: screen, $type: max-width) {
 	$break-point: gs-value($grid, $gs-width-break-point);
 	@if $break-point == "auto" {
 		@content

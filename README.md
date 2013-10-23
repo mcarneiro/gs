@@ -123,7 +123,7 @@ All functions has a `$grid` parameter that is related to the label defined when 
 
 #### media-query mixin
 
-    @mixin media-query($label:FIRST_REGISTERED_GRID, $media:screen)
+    @mixin media-query($label:FIRST_REGISTERED_GRID, $media:screen, $type:max-width)
 
 This mixin can be used if you use sass media-query (inside the same css). It's just a simple wrapper just to place the media-query based on the registered data:
 
@@ -154,6 +154,9 @@ Note that the $media parameter must be used on all calls. That's a SASS limitati
 * Create installer;
 
 ## Log history
+
+### 0.3.2
+* `media-query` mixin by default considers type as `max-width`;
 
 ### 0.3.1
 * Minor fixes on the documentation;
