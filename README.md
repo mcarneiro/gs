@@ -155,6 +155,10 @@ Note that the $media parameter must be used on all calls. That's a SASS limitati
 
 ## Log history
 
+### 0.4.0
+* applied prefix `gs-` on all methods;
+* "auto" param on gs-row mixin didn't output css;
+
 ### 0.3.2
 * `media-query` mixin by default considers type as `max-width`;
 

@@ -1,13 +1,15 @@
 // @author Marcelo Miranda Carneiro - mcarneiro@gmail.com
-// @version 0.3.1 https://github.com/mcarneiro/gs/#log-history
+// @version 0.4.0 https://github.com/mcarneiro/gs/#log-history
 
 // Usage
-// @include register-grid(wide, 1306px, 14, 10px, auto);
+// @include gs-clear-grid-list();
+// @include gs-register-grid(wide, 1306px, 14, 10px, auto);
+// @include gs-column(wide);
 
 $gs-labels:               desktop  !default;
-$gs-site-width:           1000px   !default;
+$gs-site-width:           980px   !default;
 //$gs-column-width:       84px     !default; //column-width is a optional way of setting units that should will override site-width
-$gs-column-num:           14       !default;
+$gs-column-num:           16       !default;
 $gs-width-break-point:    1700px   !default;
 $gs-gutter-width:         10px     !default;
 
@@ -73,7 +75,7 @@ $gs-gutter-width:         10px     !default;
 	$gs-column-width: null !default;
 	$gs-site-width: null !default;
 	$cols: gs-value($grid, $gs-column-num);
-	$g: gutter(1, $grid);
+	$g: gs-gutter(1, $grid);
 	$width: 0;
 
 	@if $gs-column-width != null {
@@ -95,7 +97,7 @@ $gs-gutter-width:         10px     !default;
 	}
 	$width: gs-get-column-size($grid);
 	$cols: gs-value($grid, $gs-column-num);
-	$g: gutter(1, $grid);
+	$g: gs-gutter(1, $grid);
 	@if $n > $cols {
 		$n: $cols
 	}
@@ -105,7 +107,7 @@ $gs-gutter-width:         10px     !default;
 // write a fluid (%) column based on "media" $gs-column-num. No "gutter" is considered on the calculations
 // $n:[1] number of columns (if none is passed, considers 1)
 // $grid:[first defined media] the name of configured media to fetch data
-@function fluid-column ($n: 1, $grid: gs-value($l: $gs-labels)) {
+@function gs-fluid-column ($n: 1, $grid: gs-value($l: $gs-labels)) {
 	@if gs-label-exists($grid) == 0 {
 		@return 0;
 	}
@@ -122,14 +124,14 @@ $gs-gutter-width:         10px     !default;
 // PUBLIC //
 
 // Register grid system
-@mixin clear-grid-list () {
+@mixin gs-clear-grid-list () {
 	$gs-labels: null;
 	$gs-site-width: null;
 	$gs-column-num: null;
 	$gs-width-break-point: null;
 	$gs-gutter-width: null;
 }
-@mixin register-grid ($label, $width, $column-num, $gutter, $break-point: auto, $column: auto) {
+@mixin gs-register-grid ($label, $width, $column-num, $gutter, $break-point: auto, $column: auto) {
 	@if gs-index-of($label, $gs-labels) < 0 {
 
 		// if site-width is auto, column-num, gutter-width and column-width must have values
@@ -172,7 +174,7 @@ $gs-gutter-width:         10px     !default;
 }
 
 // Get gutter value
-@function gutter ($n: 1, $grid: gs-value($l: $gs-labels)) {
+@function gs-gutter ($n: 1, $grid: gs-value($l: $gs-labels)) {
 	@if gs-label-exists($grid) == 0 {
 		@return 0;
 	}
@@ -180,7 +182,7 @@ $gs-gutter-width:         10px     !default;
 }
 
 // Get column value
-@function column ($n: 1, $grid: gs-value($l: $gs-labels), $extra: 0) {
+@function gs-column ($n: 1, $grid: gs-value($l: $gs-labels), $extra: 0) {
 	@if gs-label-exists($grid) == 0 {
 		@return 0;
 	}
@@ -196,26 +198,28 @@ $gs-gutter-width:         10px     !default;
 
 	@if gs-value($grid, $gs-site-width) != null {
 		@if unit(gs-value($grid, $gs-site-width)) == "%" {
-			@return fluid-column($n, $grid) * 1%;
+			@return gs-fluid-column($n, $grid) * 1%;
 		}
 	}
 	@return gs-fixed-column($n, $grid, $extra);
 }
 
 // get row css properties
-@mixin row ($width: auto, $grid: gs-value($l: $gs-labels)) {
+@mixin gs-row ($width: auto, $grid: gs-value($l: $gs-labels)) {
 	@if $width != auto {
 		@if unit($width) == "%" {
 			width: auto;
 		} @else {
-			width: $width + gutter($grid: $grid);
+			width: $width + gs-gutter($grid: $grid);
+			margin-left: gs-gutter(-1, $grid);
 		}
+	} @else {
+		margin-left: gs-gutter(-1, $grid);
 	}
-	margin-left: gutter(-1, $grid);
 }
 
 // get media query css wrapper
-@mixin media-query ($grid: gs-value($l: $gs-labels), $media: screen, $type: max-width) {
+@mixin gs-media-query ($grid: gs-value($l: $gs-labels), $media: screen, $type: max-width) {
 	$break-point: gs-value($grid, $gs-width-break-point);
 	@if $break-point == "auto" {
 		@content
@@ -234,10 +238,10 @@ $gs-gutter-width:         10px     !default;
 		$cols: gs-value($grid, $gs-column-num);
 		$gutter: gs-value($grid, $gs-gutter-width);
 
-		@include media-query($grid) {
+		@include gs-media-query($grid) {
 			@for $i from 1 to $cols+1 {
 				.#{$prefix}#{$i} {
-					$curr: column($i, $grid: $grid);
+					$curr: gs-column($i, $grid: $grid);
 					width: $curr;
 					@if unit($curr) != "%" {
 						margin-left: $gutter;
