@@ -123,7 +123,7 @@ All functions has a `$grid` parameter that is related to the label defined when 
 
 #### media-query mixin
 
-    @mixin gs-media-query($label:FIRST_REGISTERED_GRID, $media:screen, $type:max-width)
+    @mixin gs-media-query($label:FIRST_REGISTERED_GRID, $grid:screen, $type:max-width)
 
 This mixin can be used if you use sass media-query (inside the same css). It's just a simple wrapper just to place the media-query based on the registered data:
 
@@ -135,7 +135,7 @@ This mixin can be used if you use sass media-query (inside the same css). It's j
             display: inline-block;
             vertical-align: middle;
         }
-        @include gs-media-query($media: site-normal) {
+        @include gs-media-query($grid: site-normal) {
             @include gs-row($grid: site-normal);
             li {
                 width: gs-column($grid: site-normal);
@@ -144,7 +144,9 @@ This mixin can be used if you use sass media-query (inside the same css). It's j
         }
     }
 
-Note that the $media parameter must be used on all calls. That's a SASS limitation regarding scopes. Also, remember that @extend can't be used inside media-queries calls.
+Note that the $grid parameter must be used on all calls. That's a SASS limitation regarding scopes. Also, remember that @extend can't be used inside media-queries calls.
+
+#### media-query mixin
 
 ## Roadmap
 

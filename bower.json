@@ -1,0 +1,27 @@
+{
+  "name": "GridSystem (GS)",
+  "version": "0.4.0",
+  "homepage": "https://github.com/mcarneiro/gs",
+  "authors": [
+    "Marcelo Miranda Carneiro mcarneiro@gmail.com"
+  ],
+  "description": "Flexible and easy-to-use gridsystem for sass",
+  "main": "sass/_gs.scss",
+  "keywords": [
+    "gridsystem",
+    "sass",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "**.*test*"
+  ],
+  "devDependencies": {
+    "true": "https://github.com/ericam/true.git#0.2.0"
+  }
+}

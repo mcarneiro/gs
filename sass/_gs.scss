@@ -7,8 +7,7 @@
 // @include gs-column(wide);
 
 $gs-labels:               desktop  !default;
-$gs-site-width:           980px   !default;
-//$gs-column-width:       84px     !default; //column-width is a optional way of setting units that should will override site-width
+$gs-site-width:           980px    !default;
 $gs-column-num:           16       !default;
 $gs-width-break-point:    1700px   !default;
 $gs-gutter-width:         10px     !default;
@@ -36,7 +35,7 @@ $gs-gutter-width:         10px     !default;
 	@return 1;
 }
 // Get values by label
-@function gs-value ($label: nth($gs-labels, 1), $l: $gs-column-width) {
+@function gs-value ($label: nth($gs-labels, 1), $l: $gs-site-width) {
 	@if gs-label-exists($label) == 0 {
 		@return null;
 	}
@@ -132,6 +131,7 @@ $gs-gutter-width:         10px     !default;
 	$gs-gutter-width: null;
 }
 @mixin gs-register-grid ($label, $width, $column-num, $gutter, $break-point: auto, $column: auto) {
+	$new-width: 0;
 	@if gs-index-of($label, $gs-labels) < 0 {
 
 		// if site-width is auto, column-num, gutter-width and column-width must have values
@@ -145,14 +145,21 @@ $gs-gutter-width:         10px     !default;
 			}
 		}
 
-		// if gutter-width is auto, column-num, site-width and column-width must have values
-		@if $gutter == auto {
+		// if gutter or/and column-num is auto, site-width and column-width must have values;
+		@if $gutter == auto or $column-num == auto {
 			@if type-of($width) == number {
 				@if type-of($column) == number {
 					@if $column-num == auto {
 						$column-num: floor($width / $column);
 					}
-					$gutter: ($width - $column * $column-num) / ($column-num - 1);
+					@if $gutter != auto  {
+						$new-width: ($gutter * ($column-num - 1) + $column-num * $column);
+						@if ($new-width != $width) {
+							$column-num: $column-num - 1;
+						}
+					} @else {
+						$gutter: ($width - $column * $column-num) / ($column-num - 1);
+					}
 				}
 			}
 		}

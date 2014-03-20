@@ -1,0 +1,141 @@
+@import "true/sass/true";
+@import "gs";
+
+@function gs-collect-data() {
+	$data: join($gs-labels, $gs-site-width);
+	$data: join($data, $gs-column-num);
+	$data: join($data, $gs-width-break-point);
+	$data: join($data, $gs-gutter-width);
+
+	@return $data;
+}
+
+@include test-module("Grid System Public Methods") {
+	
+	$grid-width: 902px;
+	$grid-col-num: 12;
+	$grid-col-width: 66px;
+	$grid-gutter: 10px;
+
+	@include test("[function] gs-clear-grid-list()") {
+		
+		@include gs-clear-grid-list();
+		
+		$data: gs-collect-data();
+		$expected: null null null null null;
+
+		@include assert-equal($data, $expected, "Lista de grids deveriam estar vazias");
+	}
+
+	@include test("[function] gs-register-grid()") {
+
+		// registra grid da forma mais comum
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "normal",
+			$width: $grid-width,
+			$column-num: $grid-col-num,
+			$gutter: $grid-gutter);
+
+		$data: gs-collect-data();
+		$expected: "normal" $grid-width $grid-col-num auto $grid-gutter;
+
+		@include assert-equal($data, $expected, "Valores errados registrar grid com todos os valores");
+
+		// registra grid calculando o tamanho da grid automaticamente com base no tamanho da coluna
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "normal",
+			$width: auto,
+			$column: $grid-col-width,
+			$column-num: $grid-col-num,
+			$gutter: $grid-gutter);
+
+		$data: gs-collect-data();
+		$expected: "normal" $grid-width $grid-col-num auto $grid-gutter;
+
+		@include assert-equal($data, $expected, "Valores errados ao calcular largura da grid automaticamente");
+		@include assert-equal(nth($data, 2), $grid-width, "Largura da grid não está sendo calculado corretamente");
+
+		// registra grid calculando gutter automáticamente com base no número e tamanho das colunas
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "normal",
+			$width: $grid-width,
+			$column-num: $grid-col-num,
+			$column: $grid-col-width,
+			$gutter: auto);
+
+		$data: gs-collect-data();
+		$expected: "normal" $grid-width $grid-col-num auto $grid-gutter;
+
+		@include assert-equal($data, $expected, "Valores errados ao calcular o tamanho do gutter automaticamente");
+		@include assert-equal(nth($data, 5), $grid-gutter, "Valor do gutter não está sendo calculado corretamente");
+
+		// registra grid calculando o número de colunas automaticamente com base no tamanho das colunas, largura e gutter
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "normal",
+			$width: $grid-width,
+			$column-num: auto,
+			$column: $grid-col-width,
+			$gutter: $grid-gutter);
+
+		$data: gs-collect-data();
+		$expected: "normal" $grid-width $grid-col-num auto $grid-gutter;
+
+		@include assert-equal($data, $expected, "Valores errados ao calcular o número de colunas automaticamente (com gutter definido)");
+		@include assert-equal(nth($data, 3), $grid-col-num, "Número de colunas não está sendo calculado corretamente");
+
+		// registra grid calculando o número de colunas automaticamente com base no tamanho das colunas e largura, sem gutter
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "normal",
+			$width: 800px,
+			$column-num: auto,
+			$column: 80px,
+			$gutter: auto);
+
+		$data: gs-collect-data();
+		$expected: "normal" 800px 10 auto 0px;
+
+		@include assert-equal($data, $expected, "Valores errados ao calcular o número de colunas e gutter automaticamente (sem gutter definido)");
+		@include assert-equal(nth($data, 3), nth($expected, 3), "Número de colunas não está sendo calculado corretamente (sem gutter definido)");
+		@include assert-equal(nth($data, 5), nth($expected, 5), "Gutter não está sendo calculado corretamente");
+
+		// teste de múltiplas grids
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "grid-1",
+			$width: $grid-width,
+			$column-num: $grid-col-num,
+			$column: $grid-col-width,
+			$gutter: auto);
+		@include gs-register-grid(
+			$label: "grid-2",
+			$width: 820px,
+			$column-num: $grid-col-num,
+			$gutter: $grid-gutter);
+
+		$data: gs-collect-data();
+
+		@include assert-equal(length($data), 10, "Múltiplas grids não estão sendo registradas corretamente (verificando o length)");
+		@include assert-equal((nth($data, 1) nth($data, 2)), "grid-1" "grid-2", "Label não está sendo cadastrado corretamente em múltiplas grids");
+		@include assert-equal((nth($data, 3) nth($data, 4)), $grid-width 820px, "Tamanho total não está sendo cadastrada corretamente em múltiplas grids");
+		@include assert-equal((nth($data, 5) nth($data, 6)), $grid-col-num $grid-col-num, "Quantidade de colunas não está sendo cadastrada corretamente em múltiplas grids");
+		@include assert-equal((nth($data, 7) nth($data, 8)), auto auto, "Breakpoint não está sendo cadastrado corretamente em múltiplas grids");
+		@include assert-equal((nth($data, 9) nth($data, 10)), $grid-gutter $grid-gutter, "Gutter não está sendo cadastrado corretamente em múltiplas grids");
+
+		// teste com porcentagem
+		@include gs-clear-grid-list();
+		@include gs-register-grid(
+			$label: "grid-1",
+			$width: 100%,
+			$column-num: auto,
+			$column: 25%,
+			$gutter: auto);
+
+		$data: gs-collect-data();
+	}
+
+}
