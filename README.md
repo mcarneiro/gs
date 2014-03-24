@@ -50,7 +50,7 @@ You can add many grids as you find necessary (specially when lay-outs doesn't ma
 
 There are some functions and mixins available for applying the grids:
 
-#### column function
+#### gs-column function
 
     @function gs-column($n:1, $grid:FIRST_REGISTERED_GRID, $extra:0)
 
@@ -68,7 +68,13 @@ This function receives the number of columns, grid and an extra value, if necess
         overflow: hidden;
     }
 
-#### gutter function
+Extra values can be applied to the column as the 3rd parameter:
+
+    width: gs-column(1, site-normal, 20px); // will write 1 column + 20px
+
+Extra values just work for fixed-sized columns, fluid columns ignore this parameter.
+
+#### gs-gutter function
 
     @function gs-gutter($n:1, $grid:FIRST_REGISTERED_GRID)
 
@@ -83,7 +89,7 @@ This function receives the number of "gutters" (gutter * n) and the grid value:
         padding-left: gs-gutter(); // you can use gutter whetever is better for you
     }
 
-#### row mixin
+#### gs-row mixin
 
     @mixin gs-row($width:auto, $grid:FIRST_REGISTERED_GRID)
 
@@ -121,7 +127,7 @@ All functions has a `$grid` parameter that is related to the label defined when 
 
 **Important!** If you ommit the `$grid` parameter, the first registered gridsystem will be used.
 
-#### media-query mixin
+#### gs-media-query mixin
 
     @mixin gs-media-query($label:FIRST_REGISTERED_GRID, $grid:screen, $type:max-width)
 
@@ -146,7 +152,23 @@ This mixin can be used if you use sass media-query (inside the same css). It's j
 
 Note that the $grid parameter must be used on all calls. That's a SASS limitation regarding scopes. Also, remember that @extend can't be used inside media-queries calls.
 
-#### media-query mixin
+#### gs-classes mixin for non-semantic implementation
+
+    @mixin gs-classes($grid, $prefix)
+
+This mixin will generate classes based on `$grid` and will apply the `$prefix` as prefix of the classname:
+
+    @include gs-classes(site-normal, sn-);
+    
+    // will generate .sn-col-1, .sn-col-2 ... .sn-col-10;
+
+This can be useful for server-dise dynamic class definition or forms, for example.
+
+#### gs-clear-grid-list mixin
+
+    @mixin gs-clear-grid-list();
+
+Used to remove all registered grids.
 
 ## Roadmap
 

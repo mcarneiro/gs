@@ -1,3 +1,4 @@
+$gs-warn: false;
 @import "true/sass/true";
 @import "gs";
 
@@ -17,19 +18,25 @@
 	$grid-col-width: 66px;
 	$grid-gutter: 10px;
 
-	@include test("[function] gs-clear-grid-list()") {
-		
-		@include gs-clear-grid-list();
-		
+	@include test("[mixin] gs-register-grid()") {
+
+		//
+		// registra a "primeira" grid e apaga a que existe padrão
+		//
+		@include gs-register-grid(
+			$label: "normal",
+			$width: $grid-width,
+			$column-num: $grid-col-num,
+			$gutter: $grid-gutter);
+
 		$data: gs-collect-data();
-		$expected: null null null null null;
+		$expected: "normal" $grid-width $grid-col-num auto $grid-gutter;
 
-		@include assert-equal($data, $expected, "Lista de grids deveriam estar vazias");
-	}
+		@include assert-equal($data, $expected, "Grid padrão não está sendo excluída no primeiro registro");
 
-	@include test("[function] gs-register-grid()") {
-
+		//
 		// registra grid da forma mais comum
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "normal",
@@ -42,7 +49,9 @@
 
 		@include assert-equal($data, $expected, "Valores errados registrar grid com todos os valores");
 
+		//
 		// registra grid calculando o tamanho da grid automaticamente com base no tamanho da coluna
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "normal",
@@ -57,7 +66,9 @@
 		@include assert-equal($data, $expected, "Valores errados ao calcular largura da grid automaticamente");
 		@include assert-equal(nth($data, 2), $grid-width, "Largura da grid não está sendo calculado corretamente");
 
+		//
 		// registra grid calculando gutter automáticamente com base no número e tamanho das colunas
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "normal",
@@ -72,7 +83,9 @@
 		@include assert-equal($data, $expected, "Valores errados ao calcular o tamanho do gutter automaticamente");
 		@include assert-equal(nth($data, 5), $grid-gutter, "Valor do gutter não está sendo calculado corretamente");
 
+		//
 		// registra grid calculando o número de colunas automaticamente com base no tamanho das colunas, largura e gutter
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "normal",
@@ -87,7 +100,9 @@
 		@include assert-equal($data, $expected, "Valores errados ao calcular o número de colunas automaticamente (com gutter definido)");
 		@include assert-equal(nth($data, 3), $grid-col-num, "Número de colunas não está sendo calculado corretamente");
 
+		//
 		// registra grid calculando o número de colunas automaticamente com base no tamanho das colunas e largura, sem gutter
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "normal",
@@ -103,7 +118,9 @@
 		@include assert-equal(nth($data, 3), nth($expected, 3), "Número de colunas não está sendo calculado corretamente (sem gutter definido)");
 		@include assert-equal(nth($data, 5), nth($expected, 5), "Gutter não está sendo calculado corretamente");
 
+		//
 		// teste de múltiplas grids
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "grid-1",
@@ -126,7 +143,9 @@
 		@include assert-equal((nth($data, 7) nth($data, 8)), auto auto, "Breakpoint não está sendo cadastrado corretamente em múltiplas grids");
 		@include assert-equal((nth($data, 9) nth($data, 10)), $grid-gutter $grid-gutter, "Gutter não está sendo cadastrado corretamente em múltiplas grids");
 
+		//
 		// teste com porcentagem
+		//
 		@include gs-clear-grid-list();
 		@include gs-register-grid(
 			$label: "grid-1",
@@ -138,4 +157,108 @@
 		$data: gs-collect-data();
 	}
 
+	@include test("[mixin] gs-clear-grid-list()") {
+		
+		@include gs-clear-grid-list();
+		
+		$data: gs-collect-data();
+		$expected: null null null null null;
+
+		@include assert-equal($data, $expected, "Lista de grids deveriam estar vazias");
+	}
+	
+	//
+	// Registro de grids para os próximos testes
+	@include gs-register-grid(
+		$label: "grid-1",
+		$width: 100%,
+		$column-num: 4,
+		$gutter: 5px);
+
+	@include gs-register-grid(
+		$label: "grid-2",
+		$width: $grid-width,
+		$column-num: $grid-col-num,
+		$gutter: $grid-gutter);
+
+	@include test("[function] gs-column()") {
+		@include assert-equal(gs-column(), 25%, "Chamada sem parâmetro algum deveria retornar o tamanho de 1 coluna da primeira grid registrada");
+		@include assert-equal(gs-column(2), 50%, "Chamada apenas com o primeiro parâmetro deveria o tamanho de colunas da primeira grid registrada");
+		@include assert-equal(gs-column(all, "grid-1"), 100%, "Chamada com 'all' deveria retornar o tamanho de todas as colunas em %");
+		@include assert-equal(gs-column(all, "grid-2"), $grid-width, "Chamada com 'all' deveria retornar o tamanho de todas as colunas em PX");
+		@include assert-equal(gs-column(1, "grid-1"), 25%, "Chamada com '1' deveria retornar o tamanho de uma coluna em %");
+		@include assert-equal(gs-column(1, "grid-2"), 66px, "Chamada com '1' deveria retornar o tamanho de uma coluna em PX");
+		@include assert-equal(gs-column(2, "grid-1"), 50%, "Deveria retornar o tamanho de 2 colunas (metade) em %");
+		@include assert-equal(gs-column(6, "grid-2"), 446px, "Deveria retornar o tamanho de 6 colunas (metade) em PX");
+		@include assert-equal(gs-column(6, "grid-2", 10px), 456px, "Deveria retornar o tamanho de 6 colunas (metade) com 10px extra em PX");
+		@include assert-equal(gs-column(2, "grid-1", 2%), 50%, "Deveria retornar o tamanho de 2 colunas (metade) ignorando o tamanho extra em %");
+	}
+	@include test("[function] gs-gutter()") {
+		@include assert-equal(gs-gutter(), 5px, "Chamada sem parâmetro algum deveria retornar o tamanho de 1 gutter da primeira grid registrada");
+		@include assert-equal(gs-gutter(2), 10px, "Chamada apenas com o primeiro parâmetro deveria retornar o tamanho de gutter da primeira grid registrada");
+		@include assert-equal(gs-gutter(1, "grid-1"), 5px, "Chamada deveria retornar o tamanho de gutter da grid-1");
+		@include assert-equal(gs-gutter(1, "grid-2"), 10px, "Chamada deveria retornar o tamanho de gutter da grid-2");
+	}
+}
+@include test-module("Grid System Private Methods") {
+	
+	$grid-width: 902px;
+	$grid-col-num: 12;
+	$grid-col-width: 66px;
+	$grid-gutter: 10px;
+
+	@include test("[function] gs-index-of()") {
+		$list: 1 2 3 4;
+		@include assert-equal(gs-index-of(2, $list), 2, "Deveria retornar o 2º item da lista");
+	}
+	@include test("[function] gs-label-exists()") {
+		@include assert-equal(gs-label-exists("grid-1"), 1, "Deveria retornar '1' para 'grid-1'");
+		@include assert-equal(gs-label-exists("grid-0"), 0, "Deveria retornar '0' para 'grid-0'");
+	}
+	@include test("[function] gs-to-number()") {
+		@include assert-equal(gs-to-number(10%), 10, "Deveria retornar apenas o número para valores em %");
+		@include assert-equal(gs-to-number(10in), 10, "Deveria retornar apenas o número para valores em IN");
+		@include assert-equal(gs-to-number(10cm), 10, "Deveria retornar apenas o número para valores em CM");
+		@include assert-equal(gs-to-number(10mm), 10, "Deveria retornar apenas o número para valores em MM");
+		@include assert-equal(gs-to-number(10em), 10, "Deveria retornar apenas o número para valores em EM");
+		@include assert-equal(gs-to-number(10rem), 10, "Deveria retornar apenas o número para valores em REM");
+		@include assert-equal(gs-to-number(10ex), 10, "Deveria retornar apenas o número para valores em EX");
+		@include assert-equal(gs-to-number(10pt), 10, "Deveria retornar apenas o número para valores em PT");
+		@include assert-equal(gs-to-number(10pc), 10, "Deveria retornar apenas o número para valores em PC");
+		@include assert-equal(gs-to-number(10px), 10, "Deveria retornar apenas o número para valores em PX");
+	}
+	@include test("[function] gs-get-column-size()") {
+		@include gs-clear-grid-list;
+		@include gs-register-grid(
+			$label: "grid-1",
+			$width: $grid-width,
+			$column-num: $grid-col-num,
+			$gutter: $grid-gutter);
+		@include gs-register-grid(
+			$label: "grid-2",
+			$width: auto,
+			$column: $grid-col-width,
+			$column-num: $grid-col-num,
+			$gutter: $grid-gutter);
+
+		@include assert-equal(gs-get-column-size("grid-1"), $grid-col-width, "Deveria retornar o valor de uma coluna da 'grid-1' em PX (apenas tamanho total definido)");
+		@include assert-equal(gs-get-column-size("grid-2"), $grid-col-width, "Deveria retornar o valor de uma coluna da 'grid-2' em PX (apenas tamanho da coluna definido)");
+	}
+	@include test("[function] gs-fixed-column()") {
+		@include assert-equal(gs-fixed-column(1, "grid-1"), $grid-col-width, "Deveria retornar o valor de uma coluna da 'grid-1' em PX");
+		@include assert-equal(gs-fixed-column(1, "grid-1", 10), $grid-col-width + 10, "Deveria retornar o valor de uma coluna da 'grid-1' em PX (+ 10px extras)");
+		@include assert-equal(gs-fixed-column(3, "grid-1"), 218px, "Deveria retornar o valor de uma coluna da 'grid-1' em PX");
+		@include assert-equal(gs-fixed-column(3, "grid-1", 10), 228px, "Deveria retornar o valor de uma coluna da 'grid-1' em PX (+ 10px extras)");
+	}
+	@include test("[function] gs-fluid-column()") {
+		@include gs-clear-grid-list;
+		@include gs-register-grid(
+			$label: "grid-3",
+			$width: 100%,
+			$column-num: 4,
+			$gutter: 10px);
+
+		@include assert-equal(gs-fluid-column(1, "grid-3"), 25%, "Deveria retornar o valor de uma coluna da 'grid-3' em % (+ 10px extras)");
+		@include assert-equal(gs-fluid-column(2, "grid-3"), 50%, "Deveria retornar o valor de uma coluna da 'grid-3' em % (+ 10px extras)");
+	}
 }
