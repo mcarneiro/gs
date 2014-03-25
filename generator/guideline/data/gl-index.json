@@ -1,6 +1,6 @@
 {
-	"title": "Semantic GridSystem examples",
-	"description": "Documentation and usage examples",
+	"title": "GS examples",
+	"description": "Gridsystem documentation and usage examples",
 	"grids": {
 		"desktop": [
 			[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
