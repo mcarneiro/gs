@@ -1,7 +1,7 @@
 @import
 	// guideline lib
 	"Hyojun.Guideline/assets/sass/source/common/wrappers/lib",
-	"../../../../sass/gs";
+	"../../sass/gs";
 
 	// Project's specific core files comes here, to
 	// customize guideline colors and gridsystem page widths.
@@ -22,18 +22,17 @@
 	$column-num: 12,
 	$gutter: 10px);
 
-// @include gs-classes("desktop", "n-");
-// @include gs-classes("wide", "w-", true);
-
 @import
 	// guideline elements (desktop, large screen, version)
 	"Hyojun.Guideline/assets/sass/output/1306-desktop/guideline.scss", // desktop version
-	"../../../../sass/gs";
+	"../../sass/gs";
 
 // example elements
 @include gl-gridsystem-example("mobile");
 @include gl-gridsystem-example("desktop");
 @include gl-gridsystem-example("wide");
+
+@include gs-classes("desktop", "d-");
 
 %example {
 	@extend %example-col;
@@ -44,12 +43,15 @@
 	}
 }
 %example-col {
-	@extend p.gl;
+	@extend %gl-base-text;
 	@include box-sizing(border-box);
+	font-size: $gl-content-font-size;
+	line-height: $gl-double-space-size;
 	background: $gl-theme-neutral-color;
 	padding: 3px 5px;
 	color: #fff;
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 // basic example
@@ -88,7 +90,7 @@
 	}
 }
 
-.example-side-half-extra {
+.example-side-fractal {
 	.example-1 {
 		@extend %example-col;
 		float: left;
@@ -118,25 +120,91 @@
 	.example-1-3 {
 		width: gs-column(1/3, "desktop");
 	}
-	.example-3,
-	.example-3-1-2,
-	.example-3-1-3,
-	.example-3-2-3 {
+	.example-1-1-2,
+	.example-1-1-3,
+	.example-1-2-3 {
 		@extend %example-col;
 		float: left;
 		background: fade_out($gl-theme-neutral-color, 0.3);
 	}
-	.example-3 {
-		width: gs-column(3, "desktop");
+	.example-1-1-2 {
+		width: gs-column(1 + 1/2, "desktop");
+		+ .example-1-1-2 {
+			background: fade_out($gl-theme-neutral-color, 0.15);
+			margin-right: gs-gutter(1, "desktop");
+		}
 	}
-	.example-3-1-2 {
-		width: gs-column(3 + 1/2, "desktop");
+	.example-1-1-3 {
+		width: gs-column(1 + 1/3, "desktop");
+		+ .example-1-2-3 {
+			background: fade_out($gl-theme-neutral-color, 0.15);
+			margin-right: gs-gutter(1, "desktop");
+		}
 	}
-	.example-3-1-3 {
-		width: gs-column(3 + 1/3, "desktop");
-	}
-	.example-3-2-3 {
-		width: gs-column(3 + 2/3, "desktop");
+	.example-1-2-3 {
+		width: gs-column(1 + 2/3, "desktop");
 	}
 
+}
+
+.example-list {
+	@include gs-row(gs-column(all, "desktop"), "desktop");
+	padding: 0 0 10px;
+	> li {
+		@extend %example-col;
+		display: inline-block;
+		width: gs-column(3, "desktop");
+		margin: gs-gutter(1, "desktop") -0.25em 0 gs-gutter(1, "desktop");
+	}
+}
+.example-row:hover {
+	.example-list {
+		position: relative;
+		background: fade_out($gl-theme-neutral-color, 0.75);
+		&:before {
+			position: absolute;
+			top: -50%;
+			left: gs-gutter(1, "desktop");
+			content: "";
+			background: red;
+			width: 1px;
+			height: 175%;
+		}
+	}
+}
+.example-row-side-by-side {
+	.example-list {
+		@include gs-row(gs-column(9, "desktop"), "desktop");
+	}
+}
+
+.example-classes {
+	.d-row {
+		margin-bottom: 1px;
+	}
+	.d-row > div {
+		@extend %example-col;
+		position: relative;
+	}
+	em {
+		position: absolute;
+		width: gs-column(2, "desktop");
+		padding-right: gs-gutter(1, "desktop");
+		left: gs-column(2, "desktop", gs-gutter(1, "desktop")) * -1;
+		color: $gl-theme-neutral-color;
+		display: block;
+		top: 4px;
+		font-size: 0.75em;
+		text-align: right;
+	}
+	&.example-next {
+		em {
+			left: auto;
+			padding-right: 0;
+			right: gs-column(2, "desktop", gs-gutter(1, "desktop")) * -1;
+			padding-left: gs-gutter(1, "desktop");
+			text-align: left;
+			
+		}
+	}
 }

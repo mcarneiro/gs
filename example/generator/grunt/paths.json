@@ -17,7 +17,7 @@
 	"js_source": "<%= paths.assets %>/js",
 	"js_output": "<%= paths.js_source %>/dist",
 	"js_html_output": "/assets/js/dist",
-	"sass_source": "<%= paths.assets %>/sass/output",
+	"sass_source": "<%= paths.assets %>/sass",
 	"sass_watch": "<%= paths.assets %>/sass/**/*.scss",
 	"sass_output": "<%= paths.assets %>/css",
 	"sass_html_output": "/assets/css",

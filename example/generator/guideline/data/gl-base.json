@@ -5,11 +5,8 @@
 		"core": "./bower_components/Hyojun.Guideline/assets/js/dist/guideline.js"
 	},
 	"css": [{
-		"url": "{{{sass_html_output}}}/960-desktop/example.css",
-		"media_query": "screen and (min-width: 760px)"
-	},{
-		"url": "{{{sass_html_output}}}/320-mobile/example.css",
-		"media_query": "screen and (max-width: 759px)"
+		"url": "{{{sass_html_output}}}/example.css",
+		"media_query": "screen"
 	}],
 	"navigation": [
 		{

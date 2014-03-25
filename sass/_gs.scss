@@ -267,11 +267,23 @@ $gs-warn: true !default;
 }
 
 // generates classes with sizes
-@mixin gs-classes ($grid, $prefix, $pad: false) {
+@mixin gs-classes ($grid, $prefix, $push: true, $float: true) {
 	$cols: gs-value($grid, $gs-column-num);
 	$gutter: gs-value($grid, $gs-gutter-width);
 
 	@include gs-media-query($grid) {
+		.#{$prefix}row {
+			margin-left: gs-gutter(-1, $grid);
+			@if $float {
+				&:after {
+					content: "";
+					clear: both;
+					height: 0;
+					overflow: hidden;
+					display: block;
+				}
+			}
+		}
 		@for $i from 1 to $cols+1 {
 			$curr: gs-column($i, $grid: $grid);
 			.#{$prefix}col-#{$i} {
@@ -279,10 +291,20 @@ $gs-warn: true !default;
 				@if unit($curr) != "%" {
 					margin-left: $gutter;
 				}
+				@if $float {
+					float: left;
+				}
 			}
-			@if $pad {
-				.#{$prefix}pad-#{$i} {
-					margin-left: $curr + gs-gutter($grid: $grid);
+		}
+		// margins after cols to guarantee hierarchy
+		@for $i from 1 to $cols+1 {
+			$curr: gs-column($i, $grid: $grid);
+			@if $push {
+				.#{$prefix}push-prev-#{$i} {
+					margin-left: $curr + gs-gutter(2, $grid);
+				}
+				.#{$prefix}push-next-#{$i} {
+					margin-right: $curr + gs-gutter(1, $grid);
 				}
 			}
 		}
