@@ -1,10 +1,10 @@
 // @author Marcelo Miranda Carneiro - mcarneiro@gmail.com
-// @version 0.4.0 https://github.com/mcarneiro/gs/#log-history
+// @version 0.5.0 https://github.com/mcarneiro/gs/#log-history
 
 // Usage
-// @include gs-clear-grid-list();
 // @include gs-register-grid(wide, 1306px, 14, 10px, auto);
-// @include gs-column(wide);
+// @include gs-column(1, wide);
+// @include gs-gutter(1, wide);
 
 $gs-first-registered: false;
 $gs-labels:               desktop  !default;
@@ -12,7 +12,7 @@ $gs-site-width:           980px    !default;
 $gs-column-num:           16       !default;
 $gs-width-break-point:    1700px   !default;
 $gs-gutter-width:         10px     !default;
-$gs-warn: true !default;
+$gs-verbose: true !default;
 
 // PRIVATE //
 
@@ -31,7 +31,7 @@ $gs-warn: true !default;
 
 @function gs-label-exists ($grid) {
 	@if gs-index-of($grid, $gs-labels) < 0 {
-		@if $gs-warn {
+		@if $gs-verbose {
 			@warn "[gs-label-exists] Media \"#{$grid}\" was not found.";
 		}
 		@return 0;

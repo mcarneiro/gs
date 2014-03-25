@@ -18,31 +18,22 @@ By default, `$column` is calculated automatically based on `$width`, `$column-nu
 
     @include gs-register-grid(
         $label: "site-normal",
-        $width: 930px,
-        $column-num: 10,
+        $width: 974px,
+        $column-num: 12,
         $gutter: 10px);
 
-It'll generate a grid with 10 columns of 84px each and 10px of gutter.
+It'll generate a grid with 12 columns of 72px each and 10px of gutter.
 
 If your implementation is based on column width, the following implementation is accepted as well:
 
     @include gs-register-grid(
         $label: "site-wide",
-        $width: 1306px,
-        $column-num: auto,
-        $gutter: auto,
-        $column: 178px);
-
-It'll generate a grid with 7 columns of 178px and 10px of gutter.
-
-Or even place column and gutter only and have the width calculated:
-
-    @include gs-register-grid(
-        $label: "site-wide",
         $width: auto,
-        $column-num: 7,
+        $column-num: 12,
         $gutter: 10px,
-        $column: 178px);
+        $column: 90px);
+
+It'll generate a grid of 1190px with 12 columns and 10px of gutter.
 
 You can add many grids as you find necessary (specially when lay-outs doesn't match the main grid).
 
@@ -62,7 +53,6 @@ This function receives the number of columns, grid and an extra value, if necess
     .nav-holver {
         float: left;
         width: gs-column(); // will write the value of 1 column for the first registered grid
-        margin-right: gs-gutter(); // check the next topic about gs-gutter()
     }
     .content-holder {
         overflow: hidden;
@@ -74,6 +64,12 @@ Extra values can be applied to the column as the 3rd parameter:
 
 Extra values just work for fixed-sized columns, fluid columns ignore this parameter.
 
+A fractionated value can be passed to `gs-column`. Something like:
+
+    width: gs-column(1 + 1/3, site-normal); // will get 1 column + gutter + 1/3
+
+Obviously, the example above should be used when the columns of defined on the grid are divisible by 3.
+
 #### gs-gutter function
 
     @function gs-gutter($n:1, $grid:FIRST_REGISTERED_GRID)
@@ -83,10 +79,10 @@ This function receives the number of "gutters" (gutter * n) and the grid value:
     .nav-holver {
         float: left;
         width: gs-column();
+        margin-right: gs-gutter(); // you can use gutter whetever is better for you, as margin, padding, etc.
     }
     .content-holder {
         overflow: hidden;
-        padding-left: gs-gutter(); // you can use gutter whetever is better for you
     }
 
 #### gs-row mixin
@@ -116,10 +112,10 @@ All functions has a `$grid` parameter that is related to the label defined when 
         $gutter: 10px);
 
     .some-list {
-        @include gs-row($grid: site-normal);
+        @include gs-row($grid: "site-normal");
         li {
-            width: gs-column(1, $grid: site-normal);
-            margin-left: gs-gutter($grid: site-normal);
+            width: gs-column(1, "site-normal");
+            margin-left: gs-gutter(1, "site-normal");
             display: inline-block;
             vertical-align: middle;
         }
@@ -129,7 +125,7 @@ All functions has a `$grid` parameter that is related to the label defined when 
 
 #### gs-media-query mixin
 
-    @mixin gs-media-query($label:FIRST_REGISTERED_GRID, $grid:screen, $type:max-width)
+    @mixin gs-media-query($label:FIRST_REGISTERED_GRID, $grid:screen, $type:"max-width")
 
 This mixin can be used if you use sass media-query (inside the same css). It's just a simple wrapper just to place the media-query based on the registered data:
 
@@ -141,28 +137,31 @@ This mixin can be used if you use sass media-query (inside the same css). It's j
             display: inline-block;
             vertical-align: middle;
         }
-        @include gs-media-query($grid: site-normal) {
-            @include gs-row($grid: site-normal);
+        @include gs-media-query("site-normal") {
+            @include gs-row($grid: "site-normal");
             li {
-                width: gs-column($grid: site-normal);
-                margin-left: gs-gutter($grid: site-normal);
+                width: gs-column(1, "site-normal");
+                margin-left: gs-gutter(1, "site-normal");
             }
         }
     }
 
-Note that the $grid parameter must be used on all calls. That's a SASS limitation regarding scopes. Also, remember that @extend can't be used inside media-queries calls.
+Note that the `$grid` parameter must be used on all calls. That's a SASS limitation regarding scopes. Also, remember that `@extend` can't be used inside media-queries calls.
 
 #### gs-classes mixin for non-semantic implementation
 
-    @mixin gs-classes($grid, $prefix)
+    @mixin gs-classes($grid, $prefix, $push:true, $float:true)
 
 This mixin will generate classes based on `$grid` and will apply the `$prefix` as prefix of the classname:
 
     @include gs-classes(site-normal, sn-);
     
-    // will generate .sn-col-1, .sn-col-2 ... .sn-col-10;
+    // will generate .sn-col-1, .sn-col-2 ... .sn-col-12;
+    // will generate .sn-push-next-1, .sn-push-next-2 ... .sn-push-next-12;
+    // will generate .sn-push-prev-1, .sn-push-prev-2 ... .sn-push-prev-12;
+    // will generate .sn-row;
 
-This can be useful for server-dise dynamic class definition or forms, for example.
+This can be useful for server-dise dynamic class definition or forms, for example. By default they will consider a float-based box modelling. It's possible to ignore it by setting `$float:false`. The same with `push-next` or `push-prev` variations. If it's not needed for the implementation, just set `$push:false`.
 
 #### gs-clear-grid-list mixin
 
@@ -172,11 +171,8 @@ Used to remove all registered grids.
 
 ## Roadmap
 
-* Create Example page;
-* Create better verification regarding the "auto" value when registering;
-* Organize folders and files;
 * Create installer;
-* Create test proccess;
+* Better row mixin;
 
 ## Log history
 
