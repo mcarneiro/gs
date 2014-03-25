@@ -1,3 +1,13 @@
+
+$gl-do-override-grids: true;
+@mixin gl-override-grids {
+	
+	@include gs-clear-grid-list;
+	@include gs-register-grid("gl-wide", 1016px, 12, 4px);
+	@include gs-register-grid("gl-normal", 1016px, 12, 4px);
+	@include gs-register-grid("gl-mobile", 100%, 4, 10px, 973px);
+}
+
 @import
 	// guideline lib
 	"Hyojun.Guideline/assets/sass/source/common/wrappers/lib",
@@ -18,16 +28,10 @@
 	$width: 974px,
 	$column-num: 12,
 	$gutter: 10px);
-@include gs-register-grid(
-	$label: "wide",
-	$width: 1190,
-	$column-num: 12,
-	$gutter: 10px);
 
 // example elements
 @include gl-gridsystem-example("mobile");
 @include gl-gridsystem-example("desktop");
-@include gl-gridsystem-example("wide");
 
 @include gs-classes("desktop", "d-");
 

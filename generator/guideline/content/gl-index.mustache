@@ -56,24 +56,6 @@
 </div>
 <pre class="gl"><code class="scss">@include gs-register-grid( "desktop", 974px, 12, 10px);</code></pre>
 
-<p class="gl">
-	Next grid will be registered as a fixed 12 column with 1190px and 10px gutter:
-</p>
-<div class="gl-example">
-	<div class="gl-wide-grid">
-		{{#data.grids.wide}}
-		<div class="gl-row">
-			{{#.}}
-				<div class="gl-col{{{.}}}">
-					<div class="gl-content"></div>
-				</div>
-			{{/.}}
-		</div>
-		{{/data.grids.wide}}
-	</div>
-</div>
-<pre class="gl"><code class="scss">@include gs-register-grid( "wide", 1190px, 12, 10px);</code></pre>
-
 <!--
 	// Columns and gutters //
 -->

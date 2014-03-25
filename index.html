@@ -20,10 +20,18 @@
 	(function(d){ d.className = d.className.replace(/\bno-js\b/, 'js'); })(document.documentElement);
 </script>
 
+	<script>
+		(function (s, h) {
+			s.async = true;
+			s.type = 'text/javascript';
+			s.setAttribute("data-main", "");
+			s.src = "assets/js/guideline.js";
+			h.appendChild(s);
+		}(document.createElement('script'), document.documentElement));
+	</script>
 
 </head>
 <body>
-
 	<div class="gl-wrapper">
 		<header class="gl">
 			<div class="gl-content">
@@ -35,11 +43,6 @@
 		</header>
 		<div class="gl-content">
 
-<ul class="gl-nav-sec">
-	<li>
-		<a href="#transparency" class="gl-plugin-toggle-transparency">Toggle transparency</a>
-	</li>
-</ul>
 			<div class="gl-content-holder" role="main">
 
 
@@ -238,162 +241,6 @@
 	</div>
 </div>
 <pre class="gl"><code class="scss">@include gs-register-grid( "desktop", 974px, 12, 10px);</code></pre>
-
-<p class="gl">
-	Next grid will be registered as a fixed 12 column with 1190px and 10px gutter:
-</p>
-<div class="gl-example">
-	<div class="gl-wide-grid">
-		<div class="gl-row">
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col3">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col3">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col3">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col3">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col4">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col4">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col4">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col5">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col5">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col6">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col6">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col7">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col5">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col8">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col4">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col9">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col3">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col10">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col2">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col11">
-					<div class="gl-content"></div>
-				</div>
-				<div class="gl-col1">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-		<div class="gl-row">
-				<div class="gl-col12">
-					<div class="gl-content"></div>
-				</div>
-		</div>
-	</div>
-</div>
-<pre class="gl"><code class="scss">@include gs-register-grid( "wide", 1190px, 12, 10px);</code></pre>
 
 <!--
 	// Columns and gutters //
@@ -986,4 +833,5 @@
 	</div>
 
 
+	<a href="https://github.com/mcarneiro/gs" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 999;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
 </body>

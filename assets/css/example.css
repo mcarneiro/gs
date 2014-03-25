@@ -51,16 +51,16 @@ button.disabled.gl, button.disabled.gl-primary, button.disabled.gl-danger, butto
   opacity: 0.65;
   box-shadow: none; }
 
-.gl-gl-wide-grid .gl-row, .gl-gl-normal-grid .gl-row, .gl-gl-mobile-grid .gl-row, .gl-mobile-grid .gl-row, .gl-desktop-grid .gl-row, .gl-wide-grid .gl-row {
+.gl-gl-wide-grid .gl-row, .gl-gl-normal-grid .gl-row, .gl-gl-mobile-grid .gl-row, .gl-mobile-grid .gl-row, .gl-desktop-grid .gl-row {
   overflow: hidden;
   white-space: nowrap;
   font-family: sans-serif;
   font-size: 0; }
 
-.gl-gl-wide-grid .gl-row .gl-col1, .gl-gl-wide-grid .gl-row .gl-col2, .gl-gl-wide-grid .gl-row .gl-col3, .gl-gl-wide-grid .gl-row .gl-col4, .gl-gl-wide-grid .gl-row .gl-col5, .gl-gl-wide-grid .gl-row .gl-col6, .gl-gl-wide-grid .gl-row .gl-col7, .gl-gl-wide-grid .gl-row .gl-col8, .gl-gl-wide-grid .gl-row .gl-col9, .gl-gl-wide-grid .gl-row .gl-col10, .gl-gl-wide-grid .gl-row .gl-col11, .gl-gl-wide-grid .gl-row .gl-col12, .gl-gl-wide-grid .gl-row .gl-col13, .gl-gl-wide-grid .gl-row .gl-col14, .gl-gl-normal-grid .gl-row .gl-col1, .gl-gl-normal-grid .gl-row .gl-col2, .gl-gl-normal-grid .gl-row .gl-col3, .gl-gl-normal-grid .gl-row .gl-col4, .gl-gl-normal-grid .gl-row .gl-col5, .gl-gl-normal-grid .gl-row .gl-col6, .gl-gl-normal-grid .gl-row .gl-col7, .gl-gl-normal-grid .gl-row .gl-col8, .gl-gl-normal-grid .gl-row .gl-col9, .gl-gl-normal-grid .gl-row .gl-col10, .gl-gl-mobile-grid .gl-row .gl-col1, .gl-gl-mobile-grid .gl-row .gl-col2, .gl-gl-mobile-grid .gl-row .gl-col3, .gl-gl-mobile-grid .gl-row .gl-col4, .gl-mobile-grid .gl-row .gl-col1, .gl-mobile-grid .gl-row .gl-col2, .gl-desktop-grid .gl-row .gl-col1, .gl-desktop-grid .gl-row .gl-col2, .gl-desktop-grid .gl-row .gl-col3, .gl-desktop-grid .gl-row .gl-col4, .gl-desktop-grid .gl-row .gl-col5, .gl-desktop-grid .gl-row .gl-col6, .gl-desktop-grid .gl-row .gl-col7, .gl-desktop-grid .gl-row .gl-col8, .gl-desktop-grid .gl-row .gl-col9, .gl-desktop-grid .gl-row .gl-col10, .gl-desktop-grid .gl-row .gl-col11, .gl-desktop-grid .gl-row .gl-col12, .gl-wide-grid .gl-row .gl-col1, .gl-wide-grid .gl-row .gl-col2, .gl-wide-grid .gl-row .gl-col3, .gl-wide-grid .gl-row .gl-col4, .gl-wide-grid .gl-row .gl-col5, .gl-wide-grid .gl-row .gl-col6, .gl-wide-grid .gl-row .gl-col7, .gl-wide-grid .gl-row .gl-col8, .gl-wide-grid .gl-row .gl-col9, .gl-wide-grid .gl-row .gl-col10, .gl-wide-grid .gl-row .gl-col11, .gl-wide-grid .gl-row .gl-col12 {
+.gl-gl-wide-grid .gl-row .gl-col1, .gl-gl-wide-grid .gl-row .gl-col2, .gl-gl-wide-grid .gl-row .gl-col3, .gl-gl-wide-grid .gl-row .gl-col4, .gl-gl-wide-grid .gl-row .gl-col5, .gl-gl-wide-grid .gl-row .gl-col6, .gl-gl-wide-grid .gl-row .gl-col7, .gl-gl-wide-grid .gl-row .gl-col8, .gl-gl-wide-grid .gl-row .gl-col9, .gl-gl-wide-grid .gl-row .gl-col10, .gl-gl-wide-grid .gl-row .gl-col11, .gl-gl-wide-grid .gl-row .gl-col12, .gl-gl-normal-grid .gl-row .gl-col1, .gl-gl-normal-grid .gl-row .gl-col2, .gl-gl-normal-grid .gl-row .gl-col3, .gl-gl-normal-grid .gl-row .gl-col4, .gl-gl-normal-grid .gl-row .gl-col5, .gl-gl-normal-grid .gl-row .gl-col6, .gl-gl-normal-grid .gl-row .gl-col7, .gl-gl-normal-grid .gl-row .gl-col8, .gl-gl-normal-grid .gl-row .gl-col9, .gl-gl-normal-grid .gl-row .gl-col10, .gl-gl-normal-grid .gl-row .gl-col11, .gl-gl-normal-grid .gl-row .gl-col12, .gl-gl-mobile-grid .gl-row .gl-col1, .gl-gl-mobile-grid .gl-row .gl-col2, .gl-gl-mobile-grid .gl-row .gl-col3, .gl-gl-mobile-grid .gl-row .gl-col4, .gl-mobile-grid .gl-row .gl-col1, .gl-mobile-grid .gl-row .gl-col2, .gl-desktop-grid .gl-row .gl-col1, .gl-desktop-grid .gl-row .gl-col2, .gl-desktop-grid .gl-row .gl-col3, .gl-desktop-grid .gl-row .gl-col4, .gl-desktop-grid .gl-row .gl-col5, .gl-desktop-grid .gl-row .gl-col6, .gl-desktop-grid .gl-row .gl-col7, .gl-desktop-grid .gl-row .gl-col8, .gl-desktop-grid .gl-row .gl-col9, .gl-desktop-grid .gl-row .gl-col10, .gl-desktop-grid .gl-row .gl-col11, .gl-desktop-grid .gl-row .gl-col12 {
   display: inline-block;
   font-size: 1rem; }
-.gl-gl-wide-grid .gl-row .gl-col1 .gl-content, .gl-gl-wide-grid .gl-row .gl-col2 .gl-content, .gl-gl-wide-grid .gl-row .gl-col3 .gl-content, .gl-gl-wide-grid .gl-row .gl-col4 .gl-content, .gl-gl-wide-grid .gl-row .gl-col5 .gl-content, .gl-gl-wide-grid .gl-row .gl-col6 .gl-content, .gl-gl-wide-grid .gl-row .gl-col7 .gl-content, .gl-gl-wide-grid .gl-row .gl-col8 .gl-content, .gl-gl-wide-grid .gl-row .gl-col9 .gl-content, .gl-gl-wide-grid .gl-row .gl-col10 .gl-content, .gl-gl-wide-grid .gl-row .gl-col11 .gl-content, .gl-gl-wide-grid .gl-row .gl-col12 .gl-content, .gl-gl-wide-grid .gl-row .gl-col13 .gl-content, .gl-gl-wide-grid .gl-row .gl-col14 .gl-content, .gl-gl-normal-grid .gl-row .gl-col1 .gl-content, .gl-gl-normal-grid .gl-row .gl-col2 .gl-content, .gl-gl-normal-grid .gl-row .gl-col3 .gl-content, .gl-gl-normal-grid .gl-row .gl-col4 .gl-content, .gl-gl-normal-grid .gl-row .gl-col5 .gl-content, .gl-gl-normal-grid .gl-row .gl-col6 .gl-content, .gl-gl-normal-grid .gl-row .gl-col7 .gl-content, .gl-gl-normal-grid .gl-row .gl-col8 .gl-content, .gl-gl-normal-grid .gl-row .gl-col9 .gl-content, .gl-gl-normal-grid .gl-row .gl-col10 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col1 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col2 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col3 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col4 .gl-content, .gl-mobile-grid .gl-row .gl-col1 .gl-content, .gl-mobile-grid .gl-row .gl-col2 .gl-content, .gl-desktop-grid .gl-row .gl-col1 .gl-content, .gl-desktop-grid .gl-row .gl-col2 .gl-content, .gl-desktop-grid .gl-row .gl-col3 .gl-content, .gl-desktop-grid .gl-row .gl-col4 .gl-content, .gl-desktop-grid .gl-row .gl-col5 .gl-content, .gl-desktop-grid .gl-row .gl-col6 .gl-content, .gl-desktop-grid .gl-row .gl-col7 .gl-content, .gl-desktop-grid .gl-row .gl-col8 .gl-content, .gl-desktop-grid .gl-row .gl-col9 .gl-content, .gl-desktop-grid .gl-row .gl-col10 .gl-content, .gl-desktop-grid .gl-row .gl-col11 .gl-content, .gl-desktop-grid .gl-row .gl-col12 .gl-content, .gl-wide-grid .gl-row .gl-col1 .gl-content, .gl-wide-grid .gl-row .gl-col2 .gl-content, .gl-wide-grid .gl-row .gl-col3 .gl-content, .gl-wide-grid .gl-row .gl-col4 .gl-content, .gl-wide-grid .gl-row .gl-col5 .gl-content, .gl-wide-grid .gl-row .gl-col6 .gl-content, .gl-wide-grid .gl-row .gl-col7 .gl-content, .gl-wide-grid .gl-row .gl-col8 .gl-content, .gl-wide-grid .gl-row .gl-col9 .gl-content, .gl-wide-grid .gl-row .gl-col10 .gl-content, .gl-wide-grid .gl-row .gl-col11 .gl-content, .gl-wide-grid .gl-row .gl-col12 .gl-content {
+.gl-gl-wide-grid .gl-row .gl-col1 .gl-content, .gl-gl-wide-grid .gl-row .gl-col2 .gl-content, .gl-gl-wide-grid .gl-row .gl-col3 .gl-content, .gl-gl-wide-grid .gl-row .gl-col4 .gl-content, .gl-gl-wide-grid .gl-row .gl-col5 .gl-content, .gl-gl-wide-grid .gl-row .gl-col6 .gl-content, .gl-gl-wide-grid .gl-row .gl-col7 .gl-content, .gl-gl-wide-grid .gl-row .gl-col8 .gl-content, .gl-gl-wide-grid .gl-row .gl-col9 .gl-content, .gl-gl-wide-grid .gl-row .gl-col10 .gl-content, .gl-gl-wide-grid .gl-row .gl-col11 .gl-content, .gl-gl-wide-grid .gl-row .gl-col12 .gl-content, .gl-gl-normal-grid .gl-row .gl-col1 .gl-content, .gl-gl-normal-grid .gl-row .gl-col2 .gl-content, .gl-gl-normal-grid .gl-row .gl-col3 .gl-content, .gl-gl-normal-grid .gl-row .gl-col4 .gl-content, .gl-gl-normal-grid .gl-row .gl-col5 .gl-content, .gl-gl-normal-grid .gl-row .gl-col6 .gl-content, .gl-gl-normal-grid .gl-row .gl-col7 .gl-content, .gl-gl-normal-grid .gl-row .gl-col8 .gl-content, .gl-gl-normal-grid .gl-row .gl-col9 .gl-content, .gl-gl-normal-grid .gl-row .gl-col10 .gl-content, .gl-gl-normal-grid .gl-row .gl-col11 .gl-content, .gl-gl-normal-grid .gl-row .gl-col12 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col1 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col2 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col3 .gl-content, .gl-gl-mobile-grid .gl-row .gl-col4 .gl-content, .gl-mobile-grid .gl-row .gl-col1 .gl-content, .gl-mobile-grid .gl-row .gl-col2 .gl-content, .gl-desktop-grid .gl-row .gl-col1 .gl-content, .gl-desktop-grid .gl-row .gl-col2 .gl-content, .gl-desktop-grid .gl-row .gl-col3 .gl-content, .gl-desktop-grid .gl-row .gl-col4 .gl-content, .gl-desktop-grid .gl-row .gl-col5 .gl-content, .gl-desktop-grid .gl-row .gl-col6 .gl-content, .gl-desktop-grid .gl-row .gl-col7 .gl-content, .gl-desktop-grid .gl-row .gl-col8 .gl-content, .gl-desktop-grid .gl-row .gl-col9 .gl-content, .gl-desktop-grid .gl-row .gl-col10 .gl-content, .gl-desktop-grid .gl-row .gl-col11 .gl-content, .gl-desktop-grid .gl-row .gl-col12 .gl-content {
   position: relative;
   min-height: 1.75rem;
   padding: 0.25rem 0;
@@ -70,9 +70,9 @@ button.disabled.gl, button.disabled.gl-primary, button.disabled.gl-danger, butto
   -webkit-transition: background-color 0.2s ease-out;
   -moz-transition: background-color 0.2s ease-out;
   transition: background-color 0.2s ease-out; }
-.gl-gl-wide-grid .gl-row .gl-col1 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col2 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col3 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col4 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col5 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col6 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col7 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col8 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col9 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col10 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col11 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col12 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col13 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col14 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col1 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col2 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col3 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col4 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col5 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col6 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col7 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col8 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col9 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col10 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col1 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col2 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col3 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col4 .gl-content:hover, .gl-mobile-grid .gl-row .gl-col1 .gl-content:hover, .gl-mobile-grid .gl-row .gl-col2 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col1 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col2 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col3 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col4 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col5 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col6 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col7 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col8 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col9 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col10 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col11 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col12 .gl-content:hover, .gl-wide-grid .gl-row .gl-col1 .gl-content:hover, .gl-wide-grid .gl-row .gl-col2 .gl-content:hover, .gl-wide-grid .gl-row .gl-col3 .gl-content:hover, .gl-wide-grid .gl-row .gl-col4 .gl-content:hover, .gl-wide-grid .gl-row .gl-col5 .gl-content:hover, .gl-wide-grid .gl-row .gl-col6 .gl-content:hover, .gl-wide-grid .gl-row .gl-col7 .gl-content:hover, .gl-wide-grid .gl-row .gl-col8 .gl-content:hover, .gl-wide-grid .gl-row .gl-col9 .gl-content:hover, .gl-wide-grid .gl-row .gl-col10 .gl-content:hover, .gl-wide-grid .gl-row .gl-col11 .gl-content:hover, .gl-wide-grid .gl-row .gl-col12 .gl-content:hover {
+.gl-gl-wide-grid .gl-row .gl-col1 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col2 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col3 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col4 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col5 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col6 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col7 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col8 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col9 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col10 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col11 .gl-content:hover, .gl-gl-wide-grid .gl-row .gl-col12 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col1 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col2 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col3 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col4 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col5 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col6 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col7 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col8 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col9 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col10 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col11 .gl-content:hover, .gl-gl-normal-grid .gl-row .gl-col12 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col1 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col2 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col3 .gl-content:hover, .gl-gl-mobile-grid .gl-row .gl-col4 .gl-content:hover, .gl-mobile-grid .gl-row .gl-col1 .gl-content:hover, .gl-mobile-grid .gl-row .gl-col2 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col1 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col2 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col3 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col4 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col5 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col6 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col7 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col8 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col9 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col10 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col11 .gl-content:hover, .gl-desktop-grid .gl-row .gl-col12 .gl-content:hover {
   background-color: #808078; }
-.gl-gl-wide-grid .gl-row .gl-col1 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col2 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col3 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col4 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col5 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col6 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col7 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col8 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col9 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col10 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col11 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col12 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col13 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col14 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col1 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col2 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col3 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col4 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col5 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col6 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col7 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col8 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col9 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col10 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col1 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col2 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col3 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col4 .gl-content:before, .gl-mobile-grid .gl-row .gl-col1 .gl-content:before, .gl-mobile-grid .gl-row .gl-col2 .gl-content:before, .gl-desktop-grid .gl-row .gl-col1 .gl-content:before, .gl-desktop-grid .gl-row .gl-col2 .gl-content:before, .gl-desktop-grid .gl-row .gl-col3 .gl-content:before, .gl-desktop-grid .gl-row .gl-col4 .gl-content:before, .gl-desktop-grid .gl-row .gl-col5 .gl-content:before, .gl-desktop-grid .gl-row .gl-col6 .gl-content:before, .gl-desktop-grid .gl-row .gl-col7 .gl-content:before, .gl-desktop-grid .gl-row .gl-col8 .gl-content:before, .gl-desktop-grid .gl-row .gl-col9 .gl-content:before, .gl-desktop-grid .gl-row .gl-col10 .gl-content:before, .gl-desktop-grid .gl-row .gl-col11 .gl-content:before, .gl-desktop-grid .gl-row .gl-col12 .gl-content:before, .gl-wide-grid .gl-row .gl-col1 .gl-content:before, .gl-wide-grid .gl-row .gl-col2 .gl-content:before, .gl-wide-grid .gl-row .gl-col3 .gl-content:before, .gl-wide-grid .gl-row .gl-col4 .gl-content:before, .gl-wide-grid .gl-row .gl-col5 .gl-content:before, .gl-wide-grid .gl-row .gl-col6 .gl-content:before, .gl-wide-grid .gl-row .gl-col7 .gl-content:before, .gl-wide-grid .gl-row .gl-col8 .gl-content:before, .gl-wide-grid .gl-row .gl-col9 .gl-content:before, .gl-wide-grid .gl-row .gl-col10 .gl-content:before, .gl-wide-grid .gl-row .gl-col11 .gl-content:before, .gl-wide-grid .gl-row .gl-col12 .gl-content:before {
+.gl-gl-wide-grid .gl-row .gl-col1 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col2 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col3 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col4 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col5 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col6 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col7 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col8 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col9 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col10 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col11 .gl-content:before, .gl-gl-wide-grid .gl-row .gl-col12 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col1 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col2 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col3 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col4 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col5 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col6 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col7 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col8 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col9 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col10 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col11 .gl-content:before, .gl-gl-normal-grid .gl-row .gl-col12 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col1 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col2 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col3 .gl-content:before, .gl-gl-mobile-grid .gl-row .gl-col4 .gl-content:before, .gl-mobile-grid .gl-row .gl-col1 .gl-content:before, .gl-mobile-grid .gl-row .gl-col2 .gl-content:before, .gl-desktop-grid .gl-row .gl-col1 .gl-content:before, .gl-desktop-grid .gl-row .gl-col2 .gl-content:before, .gl-desktop-grid .gl-row .gl-col3 .gl-content:before, .gl-desktop-grid .gl-row .gl-col4 .gl-content:before, .gl-desktop-grid .gl-row .gl-col5 .gl-content:before, .gl-desktop-grid .gl-row .gl-col6 .gl-content:before, .gl-desktop-grid .gl-row .gl-col7 .gl-content:before, .gl-desktop-grid .gl-row .gl-col8 .gl-content:before, .gl-desktop-grid .gl-row .gl-col9 .gl-content:before, .gl-desktop-grid .gl-row .gl-col10 .gl-content:before, .gl-desktop-grid .gl-row .gl-col11 .gl-content:before, .gl-desktop-grid .gl-row .gl-col12 .gl-content:before {
   position: absolute;
   top: 0.3125rem;
   left: 0.1875rem;
@@ -655,7 +655,7 @@ pre.gl code {
   border: none;
   padding: 0;
   margin: 0; }
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 973px) {
   .gl-nav-sec li {
     border-left: none;
     margin: 0;
@@ -896,158 +896,158 @@ pre.gl .coffeescript .javascript, pre.gl .javascript .xml, pre.gl .tex .formula,
   content: "0.125rem = 2px"; }
 
 .gl-gl-wide-grid .gl-row {
-  margin-left: -10px; }
+  margin-left: -4px; }
 .gl-gl-wide-grid .gl-row .gl-content {
-  margin-left: 10px; }
+  margin-left: 4px; }
 .gl-gl-wide-grid .gl-row .gl-col1 {
-  width: 94px; }
+  width: 85px; }
 .gl-gl-wide-grid .gl-row .gl-col1 .gl-content {
-  background: #41413f; }
+  background: #434341; }
 .gl-gl-wide-grid .gl-row .gl-col1 .gl-content:before {
-  content: "1: 84px"; }
+  content: "1: 81px"; }
 .gl-gl-wide-grid .gl-row .gl-col2 {
-  width: 188px; }
+  width: 170px; }
 .gl-gl-wide-grid .gl-row .gl-col2 .gl-content {
-  background: #4e4e4b; }
+  background: #52524f; }
 .gl-gl-wide-grid .gl-row .gl-col2 .gl-content:before {
-  content: "2: 178px"; }
+  content: "2: 166px"; }
 .gl-gl-wide-grid .gl-row .gl-col3 {
-  width: 282px; }
+  width: 255px; }
 .gl-gl-wide-grid .gl-row .gl-col3 .gl-content {
-  background: #5b5b58; }
+  background: #61615e; }
 .gl-gl-wide-grid .gl-row .gl-col3 .gl-content:before {
-  content: "3: 272px"; }
+  content: "3: 251px"; }
 .gl-gl-wide-grid .gl-row .gl-col4 {
-  width: 376px; }
+  width: 340px; }
 .gl-gl-wide-grid .gl-row .gl-col4 .gl-content {
-  background: #686864; }
+  background: #70706d; }
 .gl-gl-wide-grid .gl-row .gl-col4 .gl-content:before {
-  content: "4: 366px"; }
+  content: "4: 336px"; }
 .gl-gl-wide-grid .gl-row .gl-col5 {
-  width: 470px; }
+  width: 425px; }
 .gl-gl-wide-grid .gl-row .gl-col5 .gl-content {
-  background: #757571; }
+  background: #7f7f7b; }
 .gl-gl-wide-grid .gl-row .gl-col5 .gl-content:before {
-  content: "5: 460px"; }
+  content: "5: 421px"; }
 .gl-gl-wide-grid .gl-row .gl-col6 {
-  width: 564px; }
+  width: 510px; }
 .gl-gl-wide-grid .gl-row .gl-col6 .gl-content {
-  background: #82827d; }
-.gl-gl-wide-grid .gl-row .gl-col6 .gl-content:before {
-  content: "6: 554px"; }
-.gl-gl-wide-grid .gl-row .gl-col7 {
-  width: 658px; }
-.gl-gl-wide-grid .gl-row .gl-col7 .gl-content {
   background: #8e8e8a; }
+.gl-gl-wide-grid .gl-row .gl-col6 .gl-content:before {
+  content: "6: 506px"; }
+.gl-gl-wide-grid .gl-row .gl-col7 {
+  width: 595px; }
+.gl-gl-wide-grid .gl-row .gl-col7 .gl-content {
+  background: #9d9d9a; }
 .gl-gl-wide-grid .gl-row .gl-col7 .gl-content:before {
-  content: "7: 648px"; }
+  content: "7: 591px"; }
 .gl-gl-wide-grid .gl-row .gl-col8 {
-  width: 752px; }
+  width: 680px; }
 .gl-gl-wide-grid .gl-row .gl-col8 .gl-content {
-  background: #9b9b97; }
+  background: #ababa9; }
 .gl-gl-wide-grid .gl-row .gl-col8 .gl-content:before {
-  content: "8: 742px"; }
+  content: "8: 676px"; }
 .gl-gl-wide-grid .gl-row .gl-col9 {
-  width: 846px; }
+  width: 765px; }
 .gl-gl-wide-grid .gl-row .gl-col9 .gl-content {
-  background: #a7a7a4; }
+  background: #babab8; }
 .gl-gl-wide-grid .gl-row .gl-col9 .gl-content:before {
-  content: "9: 836px"; }
+  content: "9: 761px"; }
 .gl-gl-wide-grid .gl-row .gl-col10 {
-  width: 940px; }
+  width: 850px; }
 .gl-gl-wide-grid .gl-row .gl-col10 .gl-content {
-  background: #b4b4b1; }
+  background: #c9c9c7; }
 .gl-gl-wide-grid .gl-row .gl-col10 .gl-content:before {
-  content: "10: 930px"; }
+  content: "10: 846px"; }
 .gl-gl-wide-grid .gl-row .gl-col11 {
-  width: 1034px; }
+  width: 935px; }
 .gl-gl-wide-grid .gl-row .gl-col11 .gl-content {
-  background: #c0c0be; }
+  background: #d7d7d6; }
 .gl-gl-wide-grid .gl-row .gl-col11 .gl-content:before {
-  content: "11: 1024px"; }
+  content: "11: 931px"; }
 .gl-gl-wide-grid .gl-row .gl-col12 {
-  width: 1128px; }
+  width: 1020px; }
 .gl-gl-wide-grid .gl-row .gl-col12 .gl-content {
-  background: #cdcdcb; }
-.gl-gl-wide-grid .gl-row .gl-col12 .gl-content:before {
-  content: "12: 1118px"; }
-.gl-gl-wide-grid .gl-row .gl-col13 {
-  width: 1222px; }
-.gl-gl-wide-grid .gl-row .gl-col13 .gl-content {
-  background: #d9d9d8; }
-.gl-gl-wide-grid .gl-row .gl-col13 .gl-content:before {
-  content: "13: 1212px"; }
-.gl-gl-wide-grid .gl-row .gl-col14 {
-  width: 1316px; }
-.gl-gl-wide-grid .gl-row .gl-col14 .gl-content {
   background: #e6e6e5; }
-.gl-gl-wide-grid .gl-row .gl-col14 .gl-content:before {
-  content: "14: 1306px"; }
+.gl-gl-wide-grid .gl-row .gl-col12 .gl-content:before {
+  content: "12: 1016px"; }
 
 .gl-gl-normal-grid .gl-row {
-  margin-left: -10px; }
+  margin-left: -4px; }
 .gl-gl-normal-grid .gl-row .gl-content {
-  margin-left: 10px; }
+  margin-left: 4px; }
 .gl-gl-normal-grid .gl-row .gl-col1 {
-  width: 97px; }
+  width: 85px; }
 .gl-gl-normal-grid .gl-row .gl-col1 .gl-content {
-  background: #464644; }
+  background: #434341; }
 .gl-gl-normal-grid .gl-row .gl-col1 .gl-content:before {
-  content: "1: 87px"; }
+  content: "1: 81px"; }
 .gl-gl-normal-grid .gl-row .gl-col2 {
-  width: 194px; }
+  width: 170px; }
 .gl-gl-normal-grid .gl-row .gl-col2 .gl-content {
-  background: #585855; }
+  background: #52524f; }
 .gl-gl-normal-grid .gl-row .gl-col2 .gl-content:before {
-  content: "2: 184px"; }
+  content: "2: 166px"; }
 .gl-gl-normal-grid .gl-row .gl-col3 {
-  width: 291px; }
+  width: 255px; }
 .gl-gl-normal-grid .gl-row .gl-col3 .gl-content {
-  background: #6a6a67; }
+  background: #61615e; }
 .gl-gl-normal-grid .gl-row .gl-col3 .gl-content:before {
-  content: "3: 281px"; }
+  content: "3: 251px"; }
 .gl-gl-normal-grid .gl-row .gl-col4 {
-  width: 388px; }
+  width: 340px; }
 .gl-gl-normal-grid .gl-row .gl-col4 .gl-content {
-  background: #7c7c78; }
+  background: #70706d; }
 .gl-gl-normal-grid .gl-row .gl-col4 .gl-content:before {
-  content: "4: 378px"; }
+  content: "4: 336px"; }
 .gl-gl-normal-grid .gl-row .gl-col5 {
-  width: 485px; }
+  width: 425px; }
 .gl-gl-normal-grid .gl-row .gl-col5 .gl-content {
-  background: #8e8e8a; }
+  background: #7f7f7b; }
 .gl-gl-normal-grid .gl-row .gl-col5 .gl-content:before {
-  content: "5: 475px"; }
+  content: "5: 421px"; }
 .gl-gl-normal-grid .gl-row .gl-col6 {
-  width: 582px; }
+  width: 510px; }
 .gl-gl-normal-grid .gl-row .gl-col6 .gl-content {
-  background: #a0a09d; }
+  background: #8e8e8a; }
 .gl-gl-normal-grid .gl-row .gl-col6 .gl-content:before {
-  content: "6: 572px"; }
+  content: "6: 506px"; }
 .gl-gl-normal-grid .gl-row .gl-col7 {
-  width: 679px; }
+  width: 595px; }
 .gl-gl-normal-grid .gl-row .gl-col7 .gl-content {
-  background: #b1b1af; }
+  background: #9d9d9a; }
 .gl-gl-normal-grid .gl-row .gl-col7 .gl-content:before {
-  content: "7: 669px"; }
+  content: "7: 591px"; }
 .gl-gl-normal-grid .gl-row .gl-col8 {
-  width: 776px; }
+  width: 680px; }
 .gl-gl-normal-grid .gl-row .gl-col8 .gl-content {
-  background: #c3c3c1; }
+  background: #ababa9; }
 .gl-gl-normal-grid .gl-row .gl-col8 .gl-content:before {
-  content: "8: 766px"; }
+  content: "8: 676px"; }
 .gl-gl-normal-grid .gl-row .gl-col9 {
-  width: 873px; }
+  width: 765px; }
 .gl-gl-normal-grid .gl-row .gl-col9 .gl-content {
-  background: #d4d4d3; }
+  background: #babab8; }
 .gl-gl-normal-grid .gl-row .gl-col9 .gl-content:before {
-  content: "9: 863px"; }
+  content: "9: 761px"; }
 .gl-gl-normal-grid .gl-row .gl-col10 {
-  width: 970px; }
+  width: 850px; }
 .gl-gl-normal-grid .gl-row .gl-col10 .gl-content {
-  background: #e6e6e5; }
+  background: #c9c9c7; }
 .gl-gl-normal-grid .gl-row .gl-col10 .gl-content:before {
-  content: "10: 960px"; }
+  content: "10: 846px"; }
+.gl-gl-normal-grid .gl-row .gl-col11 {
+  width: 935px; }
+.gl-gl-normal-grid .gl-row .gl-col11 .gl-content {
+  background: #d7d7d6; }
+.gl-gl-normal-grid .gl-row .gl-col11 .gl-content:before {
+  content: "11: 931px"; }
+.gl-gl-normal-grid .gl-row .gl-col12 {
+  width: 1020px; }
+.gl-gl-normal-grid .gl-row .gl-col12 .gl-content {
+  background: #e6e6e5; }
+.gl-gl-normal-grid .gl-row .gl-col12 .gl-content:before {
+  content: "12: 1016px"; }
 
 .gl-gl-mobile-grid .gl-row {
   margin-left: 0; }
@@ -1121,7 +1121,7 @@ html.gl.nav-opened body {
 
 .gl-content {
   margin: 0 auto;
-  max-width: 1306px;
+  max-width: 1016px;
   padding: 1.25rem 0; }
 .gl-content:after {
   clear: both;
@@ -1183,7 +1183,7 @@ ol.gl + p.gl, ol.gl + p.gl-lead, ul.gl + p.gl, ul.gl + p.gl-lead {
   display: none; }
 
 .gl-nav .gl-content {
-  max-width: 1326px; }
+  max-width: 1024px; }
 
 .gl-content {
   padding-left: 0.625rem;
@@ -1290,83 +1290,6 @@ ol.gl + p.gl, ol.gl + p.gl-lead, ul.gl + p.gl, ul.gl + p.gl-lead {
   background: #e6e6e5; }
 .gl-desktop-grid .gl-row .gl-col12 .gl-content:before {
   content: "12: 974px"; }
-
-.gl-wide-grid .gl-row {
-  margin-left: -10px; }
-.gl-wide-grid .gl-row .gl-content {
-  margin-left: 10px; }
-.gl-wide-grid .gl-row .gl-col1 {
-  width: 100px; }
-.gl-wide-grid .gl-row .gl-col1 .gl-content {
-  background: #434341; }
-.gl-wide-grid .gl-row .gl-col1 .gl-content:before {
-  content: "1: 90px"; }
-.gl-wide-grid .gl-row .gl-col2 {
-  width: 200px; }
-.gl-wide-grid .gl-row .gl-col2 .gl-content {
-  background: #52524f; }
-.gl-wide-grid .gl-row .gl-col2 .gl-content:before {
-  content: "2: 190px"; }
-.gl-wide-grid .gl-row .gl-col3 {
-  width: 300px; }
-.gl-wide-grid .gl-row .gl-col3 .gl-content {
-  background: #61615e; }
-.gl-wide-grid .gl-row .gl-col3 .gl-content:before {
-  content: "3: 290px"; }
-.gl-wide-grid .gl-row .gl-col4 {
-  width: 400px; }
-.gl-wide-grid .gl-row .gl-col4 .gl-content {
-  background: #70706d; }
-.gl-wide-grid .gl-row .gl-col4 .gl-content:before {
-  content: "4: 390px"; }
-.gl-wide-grid .gl-row .gl-col5 {
-  width: 500px; }
-.gl-wide-grid .gl-row .gl-col5 .gl-content {
-  background: #7f7f7b; }
-.gl-wide-grid .gl-row .gl-col5 .gl-content:before {
-  content: "5: 490px"; }
-.gl-wide-grid .gl-row .gl-col6 {
-  width: 600px; }
-.gl-wide-grid .gl-row .gl-col6 .gl-content {
-  background: #8e8e8a; }
-.gl-wide-grid .gl-row .gl-col6 .gl-content:before {
-  content: "6: 590px"; }
-.gl-wide-grid .gl-row .gl-col7 {
-  width: 700px; }
-.gl-wide-grid .gl-row .gl-col7 .gl-content {
-  background: #9d9d9a; }
-.gl-wide-grid .gl-row .gl-col7 .gl-content:before {
-  content: "7: 690px"; }
-.gl-wide-grid .gl-row .gl-col8 {
-  width: 800px; }
-.gl-wide-grid .gl-row .gl-col8 .gl-content {
-  background: #ababa9; }
-.gl-wide-grid .gl-row .gl-col8 .gl-content:before {
-  content: "8: 790px"; }
-.gl-wide-grid .gl-row .gl-col9 {
-  width: 900px; }
-.gl-wide-grid .gl-row .gl-col9 .gl-content {
-  background: #babab8; }
-.gl-wide-grid .gl-row .gl-col9 .gl-content:before {
-  content: "9: 890px"; }
-.gl-wide-grid .gl-row .gl-col10 {
-  width: 1000px; }
-.gl-wide-grid .gl-row .gl-col10 .gl-content {
-  background: #c9c9c7; }
-.gl-wide-grid .gl-row .gl-col10 .gl-content:before {
-  content: "10: 990px"; }
-.gl-wide-grid .gl-row .gl-col11 {
-  width: 1100px; }
-.gl-wide-grid .gl-row .gl-col11 .gl-content {
-  background: #d7d7d6; }
-.gl-wide-grid .gl-row .gl-col11 .gl-content:before {
-  content: "11: 1090px"; }
-.gl-wide-grid .gl-row .gl-col12 {
-  width: 1200px; }
-.gl-wide-grid .gl-row .gl-col12 .gl-content {
-  background: #e6e6e5; }
-.gl-wide-grid .gl-row .gl-col12 .gl-content:before {
-  content: "12: 1190px"; }
 
 .d-row {
   margin-left: -10px; }
