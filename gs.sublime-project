@@ -16,7 +16,7 @@
 				"--trace",
 				"--update",
 				"--load-path=${project_path}/bower_components",
-				"${project_path}/sass:${project_path}/css"
+				"${project_path}/assets/sass:${project_path}/assets/css"
 			],
 			"name": "SASS update",
 			"path": "/usr/local/bin:/usr/bin/",

@@ -1,0 +1,12 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"browser": true,
+	"smarttabs": true,
+	"globals": {
+		"jQuery": true,
+		"require": true,
+		"define": true
+	}
+}

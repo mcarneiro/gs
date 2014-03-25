@@ -1,30 +1,20 @@
 {
-  "name": "gs",
-  "version": "0.5.0",
+  "name": "GridSystem example",
+  "version": "0.0.0",
   "homepage": "https://github.com/mcarneiro/gs",
   "authors": [
-    "Marcelo Miranda Carneiro mcarneiro@gmail.com"
-  ],
-  "description": "Flexible and easy-to-use gridsystem for sass",
-  "main": "sass/_gs.scss",
-  "keywords": [
-    "semantic gridsystem",
-    "gridsystem",
-    "sass",
-    "grid"
+    "Marcelo Miranda Carneiro <mcarneiro@fbiz.com.br>"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "*.sublime*",
     "node_modules",
     "bower_components",
-    "test.scss",
-    "example.scss",
-    "example",
-    "**.*test*"
+    "test",
+    "tests"
   ],
   "devDependencies": {
-    "true": "https://github.com/ericam/true.git#0.2.0"
+    "Hyojun.Guideline": "https://bitbucket.org/fbiz/hyojun.guideline.git",
+    "gs": "~0.5.0"
   }
 }
