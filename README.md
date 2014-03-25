@@ -1,6 +1,8 @@
 #GS - Semantic Grid System v0.5
 Flexible and easy-to-use gridsystem for SASS.
 
+Check all examples in [http://mcarneiro.github.io/gs/](http://mcarneiro.github.io/gs/)
+
 ## About this project
 GS is a simple and flexible css grid-system that runs over SASS. It only does calculations around grid-systems and leave the box-modeling techniques to the developer.
 
