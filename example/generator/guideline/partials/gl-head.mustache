@@ -1,0 +1,19 @@
+	{{#data.css}}
+	<link rel="stylesheet" href="{{{url}}}" media="{{media_query}}">
+	{{/data.css}}
+
+{{#include}}
+	{{{partials}}}/gl-nojs.mustache
+{{/include}}
+
+	{{#data.js}}
+	<script>
+		(function (s, h) {
+			s.async = true;
+			s.type = 'text/javascript';
+			s.setAttribute("data-main", "{{{page}}}");
+			s.src = "{{{core}}}";
+			h.appendChild(s);
+		}(document.createElement('script'), document.documentElement));
+	</script>
+	{{/data.js}}

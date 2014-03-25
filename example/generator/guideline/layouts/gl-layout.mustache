@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>          <html class="gl no-js msie lt-ie9 lt-ie10" lang="pt-BR"> <![endif]-->
+<!--[if IE 9]>          <html class="gl no-js msie lt-ie10" lang="pt-BR"> <![endif]-->
+<!--[if IE 10]>         <html class="gl no-js msie" lang="pt-BR"> <![endif]-->
+<!--[if gt IE 10]><!--> <html class="gl no-js" lang="pt-BR"> <!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{data.title}}</title>
+	<meta charset="utf-8">
+	<meta name="description" content="{{{data.description}}}">
+	<meta name="keywords" content="{{{data.keywords}}}">
+	<meta name="author" content="{{{data.author}}}">
+	<meta name="robots" content="INDEX, FOLLOW">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="shortcut icon" href="{{{data.favicon}}}" />
+
+	{{#include}}
+		{{{partials}}}/gl-head.mustache
+	{{/include}}
+
+</head>
+<body>
+
+	<div class="gl-wrapper">
+		<header class="gl">
+			<div class="gl-content">
+				<h1 class="gl">{{data.title}}</h1>
+				<p class="gl">
+					{{data.description}}
+				</p>
+			</div>
+		</header>
+		<div class="gl-content">
+
+			{{#include}}
+				{{{partials}}}/gl-nav-sec.mustache
+			{{/include}}
+
+			<div class="gl-content-holder" role="main">
+
+				{{#include}}
+					{{{partials}}}/gl-content.mustache
+				{{/include}}
+
+			</div>
+		</div>
+	</div>
+
+	{{#include}}
+		{{{partials}}}/gl-foot.mustache
+	{{/include}}
+
+</body>

@@ -1,0 +1,25 @@
+﻿{{#data.navigation.length}}
+<a href="#gl-main-navigation" class="gl-nav-toggle gl-plugin-nav-toggle"
+	data-nav-toggle-page-holder=".gl-wrapper"
+	data-nav-toggle-menu-holder="#gl-main-navigation">
+	Menu
+</a>
+<nav id="gl-main-navigation" class="gl-nav" role="navigation">
+	<ul class="gl-content">
+		{{#data.navigation}}
+		<li>
+			<a href="{{{url}}}">{{{name}}}</a>
+			{{#children.length}}
+			<div class="gl-nav-child">
+				<ul class="gl-content">
+					{{#children}}
+					<li><a href="{{{url}}}">{{{name}}}</a></li>
+					{{/children}}
+				</ul>
+			</div>
+			{{/children.length}}
+		</li>
+		{{/data.navigation}}
+	</ul>
+</nav>
+{{/data.navigation.length}}

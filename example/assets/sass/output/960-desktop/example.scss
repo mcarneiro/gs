@@ -1,0 +1,142 @@
+@import
+	// guideline lib
+	"Hyojun.Guideline/assets/sass/source/common/wrappers/lib",
+	"../../../../sass/gs";
+
+	// Project's specific core files comes here, to
+	// customize guideline colors and gridsystem page widths.
+
+@include gs-register-grid(
+	$label: "mobile",
+	$width: 100%,
+	$column-num: 2,
+	$gutter: 10px);
+@include gs-register-grid(
+	$label: "desktop",
+	$width: 974px,
+	$column-num: 12,
+	$gutter: 10px);
+@include gs-register-grid(
+	$label: "wide",
+	$width: 1190,
+	$column-num: 12,
+	$gutter: 10px);
+
+// @include gs-classes("desktop", "n-");
+// @include gs-classes("wide", "w-", true);
+
+@import
+	// guideline elements (desktop, large screen, version)
+	"Hyojun.Guideline/assets/sass/output/1306-desktop/guideline.scss", // desktop version
+	"../../../../sass/gs";
+
+// example elements
+@include gl-gridsystem-example("mobile");
+@include gl-gridsystem-example("desktop");
+@include gl-gridsystem-example("wide");
+
+%example {
+	@extend %example-col;
+	margin-top: 10px;
+	margin-bottom: 0;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+%example-col {
+	@extend p.gl;
+	@include box-sizing(border-box);
+	background: $gl-theme-neutral-color;
+	padding: 3px 5px;
+	color: #fff;
+	margin: 0;
+}
+
+// basic example
+.example-mobile {
+	@extend %example;
+	width: gs-column(1, "mobile");
+}
+.example-desktop {
+	@extend %example;
+	width: gs-column(1, "desktop");
+}
+
+// box modelling examples
+.example-wrapper {
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.example-auto {
+	@extend %example-col;
+	overflow: hidden;
+}
+
+.example-side-extra {
+	.example-3,
+	.example-3-gutter {
+		@extend %example-col;
+		float: left;
+		background: fade_out($gl-theme-neutral-color, 0.3);
+	}
+	.example-3 {
+		width: gs-column(3, "desktop");
+		margin-right: gs-gutter(1, "desktop");
+	}
+	.example-3-gutter {
+		width: gs-column(3, "desktop", gs-gutter(1, "desktop"));
+	}
+}
+
+.example-side-half-extra {
+	.example-1 {
+		@extend %example-col;
+		float: left;
+		background: fade_out($gl-theme-neutral-color, 0.3);
+		width: gs-column(1, "desktop");
+		margin-right: gs-gutter(1, "desktop");
+	}
+	.example-1-2,
+	.example-1-3 {
+		@extend %example-col;
+		float: left;
+		background: fade_out($gl-theme-neutral-color, 0.15);
+		+ .example-1-2 {
+			margin-right: gs-gutter(1, "desktop");
+		}
+		+ .example-1-2, + .example-1-3 {
+			background: fade_out($gl-theme-neutral-color, 0.3);
+			+ .example-1-2, + .example-1-3 {
+				background: fade_out($gl-theme-neutral-color, 0.45);
+				margin-right: gs-gutter(1, "desktop");
+			}
+		}
+	}
+	.example-1-2 {
+		width: gs-column(1/2, "desktop");
+	}
+	.example-1-3 {
+		width: gs-column(1/3, "desktop");
+	}
+	.example-3,
+	.example-3-1-2,
+	.example-3-1-3,
+	.example-3-2-3 {
+		@extend %example-col;
+		float: left;
+		background: fade_out($gl-theme-neutral-color, 0.3);
+	}
+	.example-3 {
+		width: gs-column(3, "desktop");
+	}
+	.example-3-1-2 {
+		width: gs-column(3 + 1/2, "desktop");
+	}
+	.example-3-1-3 {
+		width: gs-column(3 + 1/3, "desktop");
+	}
+	.example-3-2-3 {
+		width: gs-column(3 + 2/3, "desktop");
+	}
+
+}

@@ -1,0 +1,617 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]>          <html class="gl no-js msie lt-ie9 lt-ie10" lang="pt-BR"> <![endif]-->
+<!--[if IE 9]>          <html class="gl no-js msie lt-ie10" lang="pt-BR"> <![endif]-->
+<!--[if IE 10]>         <html class="gl no-js msie" lang="pt-BR"> <![endif]-->
+<!--[if gt IE 10]><!--> <html class="gl no-js" lang="pt-BR"> <!--<![endif]-->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Semantic GridSystem examples</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Documentation and usage examples">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="INDEX, FOLLOW">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="shortcut icon" href="" />
+
+	<link rel="stylesheet" href="/assets/css/960-desktop/example.css" media="screen and (min-width: 760px)">
+	<link rel="stylesheet" href="/assets/css/320-mobile/example.css" media="screen and (max-width: 759px)">
+
+<script type="text/javascript">
+	(function(d){ d.className = d.className.replace(/\bno-js\b/, 'js'); })(document.documentElement);
+</script>
+
+	<script>
+		(function (s, h) {
+			s.async = true;
+			s.type = 'text/javascript';
+			s.setAttribute("data-main", "");
+			s.src = "./bower_components/Hyojun.Guideline/assets/js/dist/guideline.js";
+			h.appendChild(s);
+		}(document.createElement('script'), document.documentElement));
+	</script>
+
+</head>
+<body>
+
+	<div class="gl-wrapper">
+		<header class="gl">
+			<div class="gl-content">
+				<h1 class="gl">Semantic GridSystem examples</h1>
+				<p class="gl">
+					Documentation and usage examples
+				</p>
+			</div>
+		</header>
+		<div class="gl-content">
+
+<ul class="gl-nav-sec">
+	<li>
+		<a href="#transparency" class="gl-plugin-toggle-transparency">Toggle transparency</a>
+	</li>
+</ul>
+			<div class="gl-content-holder" role="main">
+
+
+<!--
+	// Basic usage //
+-->
+<h2 id="Basic-usage" class="gl-header">Basic usage</h2>
+
+<p class="gl">
+	Examples using functions and mixins directly on SASS. Considering that all examples below wil usse this registered grids.
+</p>
+
+<!--
+	// Registering grids //
+-->
+<h3 id="Registering-grids" class="gl">Registering grids</h3>
+<p class="gl">
+	Example of generated grids calculation when registering them. This elements are just created as a test purpose, just to show the values registered reflected on a visual platform. This gridsystem won't make any box modelling, so it won't place any <code class="gl">float</code>, <code class="gl">inline-block</code>, etc.
+</p>
+
+<p class="gl">
+	This example will register a 2 column flexible grid with 10px gutter:
+</p>
+<div class="gl-example">
+	<div class="gl-mobile-grid">
+		<div class="gl-row">
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+	</div>
+</div>
+<pre class="gl"><code class="scss">@include gs-register-grid( "mobile", 100%, 2, 10px);</code></pre>
+<p class="gl-legend">Note that gutter will only be used as a variable. It won't be calculated together with the columns.</p>
+
+<p class="gl">
+	Next grid will be registered as a fixed 12 column with 974px and 10px gutter:
+</p>
+<div class="gl-example">
+	<div class="gl-desktop-grid">
+		<div class="gl-row">
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col5">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col5">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col6">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col6">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col7">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col5">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col8">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col9">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col10">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col11">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col12">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+	</div>
+</div>
+<pre class="gl"><code class="scss">@include gs-register-grid( "desktop", 974px, 12, 10px);</code></pre>
+
+<p class="gl">
+	Next grid will be registered as a fixed 12 column with 1190px and 10px gutter:
+</p>
+<div class="gl-example">
+	<div class="gl-wide-grid">
+		<div class="gl-row">
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col5">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col5">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col6">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col6">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col7">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col5">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col8">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col4">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col9">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col3">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col10">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col2">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col11">
+					<div class="gl-content"></div>
+				</div>
+				<div class="gl-col1">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+		<div class="gl-row">
+				<div class="gl-col12">
+					<div class="gl-content"></div>
+				</div>
+		</div>
+	</div>
+</div>
+<pre class="gl"><code class="scss">@include gs-register-grid( "wide", 1190px, 12, 10px);</code></pre>
+
+<!--
+	// Columns and gutters //
+-->
+<h3 id="Columns-and-gutters" class="gl">Columns and gutters</h3>
+<p class="gl">
+	Use <code class="gl">gs-column()</code> to get column values. Next example shows a simple implementation of column:
+</p>
+<p class="gl">
+	1 column from previously registered <code class="gl">mobile</code> grid:
+</p>
+<div class="gl-example">
+	<div class="example-mobile">
+		50% large
+	</div>
+</div>
+<pre class="gl"><code class="scss">.example-mobile { width: gs-column(1, "mobile"); }</code></pre>
+<pre class="gl"><code class="scss">&lt;div class=&quot;example-mobile&quot;&gt; I'm 50% large &lt;/div&gt;</code></pre>
+
+<p class="gl">
+	1 column from previously registered <code class="gl">desktop</code> grid:
+</p>
+<div class="gl-example">
+	<div class="example-desktop">
+		66px large
+	</div>
+</div>
+<pre class="gl"><code class="scss">.example-desktop { width: gs-column(1, "desktop"); }</code></pre>
+<pre class="gl"><code class="scss">&lt;div class=&quot;example-desktop&quot;&gt; I have 66px &lt;/div&gt;</code></pre>
+
+<!--
+	// Box modelling and extra values //
+-->
+<h4 id="Box-modelling-and-extra-values" class="gl">Box modelling and extra values</h4>
+
+<p class="gl">
+	It's possible to add an extra value to <code class="gl">gs-column()</code>. For example, use <code class="gl">gs-gutter()</code> do get gutter value for specific grid:
+</p>
+<div class="gl-example example-side-extra">
+	<div class="example-wrapper">
+		<div class="example-3">
+			3 columns
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-3-gutter">
+			3 columns + gutter
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+</div>
+<pre class="gl"><code>.example-3 {
+  <strong class="gl-note-1">float: left;</strong>
+  width: gs-column(3, "desktop", gs-gutter(1, "desktop")<strong class="gl-note-2"></strong>);
+}
+.example-3-gutter {
+  float: left;
+  width: gs-column(3, "desktop");
+  margin-right: gs-gutter(1, "desktop");
+}
+.example-auto {
+  <strong class="gl-note-3">overflow: hidden;</strong>
+  margin: 0;
+}</code></pre>
+<pre class="gl"><code>&lt;div class=&quot;example-wrapper&quot;&gt;
+  &lt;div class=&quot;example-3&quot;&gt; 3 columns &lt;/div&gt;
+  &lt;div class=&quot;example-auto&quot;&gt; I'm width "auto". &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;example-wrapper&quot;&gt;
+  &lt;div class=&quot;example-3-gutter&quot;&gt; 3 columns + gutter &lt;/div&gt;
+  &lt;div class=&quot;example-auto&quot;&gt; I'm width "auto". &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<ol class="gl">
+	<li>
+		Just example show that the box-modelling is made by the developer;
+	</li>
+	<li>
+		This will return the gutter value registered for <code class="gl">desktop</code> grid;
+	</li>
+	<li>
+		Example to show that the developer has the freedom to use the desired technique, in this case, having a fluid element instead of setting "9 columns".
+	</li>
+</ol>
+
+<!--
+	// Fractionated values //
+-->
+<h4 id="Fractionated-values" class="gl">Fractionated values</h4>
+<p class="gl">
+	It's also possible to add fractionated columns if there's any need to do so:
+</p>
+<div class="gl-example example-side-half-extra">
+	<div class="example-wrapper">
+		<div class="example-1">
+			1 column
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-1-2">
+			½
+		</div>
+		<div class="example-1-2">
+			½
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+</div>
+<pre class="gl"><code>.example-1 {
+  width: gs-column(1, "desktop");
+}
+.example-1-2 {
+  width: gs-column(1/2, "desktop");
+}</code></pre>
+<pre class="gl"><code>&lt;div class=&quot;example-wrapper&quot;&gt;
+  &lt;div class=&quot;example-1&quot;&gt; 1 column &lt;/div&gt;
+  &lt;div class=&quot;example-auto&quot;&gt; I'm width "auto". &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;example-wrapper&quot;&gt;
+  &lt;div class=&quot;example-1-2&quot;&gt; &frac12; &lt;/div&gt;
+  &lt;div class=&quot;example-1-2&quot;&gt; &frac12; &lt;/div&gt;
+  &lt;div class=&quot;example-auto&quot;&gt; I'm width "auto". &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<div class="gl-example example-side-half-extra">
+	<div class="example-wrapper">
+		<div class="example-1-3">
+			⅓
+		</div>
+		<div class="example-1-3">
+			⅓
+		</div>
+		<div class="example-1-3">
+			⅓
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-3">
+			3
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-3-1-3">
+			3 + ⅓
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-1"> 1 col </div>
+		<div class="example-1"> 1 col </div>
+		<div class="example-1"> 1 col </div>
+		<div class="example-1-3"> ⅓ </div>
+		<div class="example-1-3"> ⅓ </div>
+		<div class="example-1-3"> ⅓ </div>
+		<div class="example-1"> 1 col </div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-3-2-3">
+			3 + ⅔
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-3-1-2">
+			3 + ½
+		</div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+	<div class="example-wrapper">
+		<div class="example-1"> 1 col </div>
+		<div class="example-1"> 1 col </div>
+		<div class="example-1"> 1 col </div>
+		<div class="example-1-2"> ½ </div>
+		<div class="example-1-2"> ½ </div>
+		<div class="example-1"> 1 col </div>
+		<div class="example-auto">
+			I'm width "auto".
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>

@@ -1,0 +1,57 @@
+{
+	"title": "Gridsystem",
+	"description": "Grids usadas no projeto",
+	"gridsystems": [{
+		"name": "Main 'wide' grid",
+		"description": "Main project's default gridsystem with 14 columns registered as <code class=\"gl\">gl-wide</code>. It'll projected to be used over <code class=\"gl\">1305px</code> wide.",
+		"grid": {
+			"name": "gl-wide",
+			"data": [
+				[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+				[2, 2, 2, 2, 2, 2, 2],
+				[3, 3, 3, 3, 2],
+				[4, 4, 4, 2],
+				[5, 5, 4],
+				[6, 6, 2],
+				[7, 7],
+				[8, 6],
+				[9, 5],
+				[10, 4],
+				[11, 3],
+				[12, 2],
+				[13, 1],
+				[14]
+			]
+		}
+	},{
+		"name": "Main 'normal' grid",
+		"description": "Main project's \"normal\" gridsystem with 10 columns registered as <code class=\"gl\">gl-normal</code>. It'll projected to be used under <code class=\"gl\">1306px</code> wide and over <code class=\"gl\">929px</code>.",
+		"grid": {
+			"name": "gl-normal",
+			"data": [
+				[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+				[2, 2, 2, 2, 2],
+				[3, 3, 3, 1],
+				[4, 4, 2],
+				[5, 5],
+				[6, 4],
+				[7, 3],
+				[8, 2],
+				[9, 1],
+				[10]
+			]
+		}
+	},{
+		"name": "Main 'Mobile' grid",
+		"description": "Main project's \"mobile\" gridsystem with 4 columns registered as <code class=\"gl\">gl-mobile</code>. It'll projected to be used under <code class=\"gl\">930px</code>.",
+		"grid": {
+			"name": "gl-mobile",
+			"data": [
+				[1, 1, 1, 1],
+				[2, 2],
+				[3, 1],
+				[4]
+			]
+		}
+	}]
+}

@@ -1,0 +1,20 @@
+{
+	"title" : "Hyojun Guideline",
+	"description": "Documento com detalhes dos módulos do projeto",
+	"js": {
+		"core": "./bower_components/Hyojun.Guideline/assets/js/dist/guideline.js"
+	},
+	"css": [{
+		"url": "{{{sass_html_output}}}/960-desktop/example.css",
+		"media_query": "screen and (min-width: 760px)"
+	},{
+		"url": "{{{sass_html_output}}}/320-mobile/example.css",
+		"media_query": "screen and (max-width: 759px)"
+	}],
+	"navigation": [
+		{
+			"name": "Início",
+			"url": "/example"
+		}
+	]
+}

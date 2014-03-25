@@ -1,0 +1,10 @@
+{
+	"index": {
+		"dest": "<%= paths.output %>/index.html",
+		"files": ["<%= paths.layouts %>/gl-layout.mustache"],
+		"data": [
+			"<%= paths.data %>/gl-base.json",
+			"<%= paths.data %>/gl-index.json"
+		]
+	}
+}

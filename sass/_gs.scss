@@ -111,11 +111,19 @@ $gs-warn: true !default;
 	}
 	$width: gs-get-column-size($grid);
 	$cols: gs-value($grid, $gs-column-num);
+	$col-diff: $n - floor($n);
 	$g: gs-gutter(1, $grid);
 	@if $n > $cols {
 		$n: $cols
 	}
-	@return (($g + $width) * $n) - $g + $extra;
+	@if $n < 1 {
+		@return max((($g + $width) * floor($n)) - $g, 0) + $extra + ($width * $col-diff);
+	} @else {
+		@if $width * $col-diff > 0 {
+			$extra: $extra + ($width * $col-diff) + $g;
+		}
+		@return (($g + $width) * floor($n) - $g) + $extra;
+	}
 }
 
 // write a fluid (%) column based on "media" $gs-column-num. No "gutter" is considered on the calculations

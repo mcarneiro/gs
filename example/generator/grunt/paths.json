@@ -1,0 +1,26 @@
+{
+	"root": ".",
+	"assets": "<%= paths.root %>/assets",
+
+
+	"templates": "<%= paths.root %>/generator/guideline",
+	"templates_watch": "<%= paths.templates %>/**/*.mustache",
+	"output": "<%= paths.root %>",
+
+
+	"layouts": "<%= paths.templates %>/layouts",
+	"partials": "<%= paths.templates %>/partials",
+	"content": "<%= paths.templates %>/content",
+	"data": "<%= paths.templates %>/data",
+
+
+	"js_source": "<%= paths.assets %>/js",
+	"js_output": "<%= paths.js_source %>/dist",
+	"js_html_output": "/assets/js/dist",
+	"sass_source": "<%= paths.assets %>/sass/output",
+	"sass_watch": "<%= paths.assets %>/sass/**/*.scss",
+	"sass_output": "<%= paths.assets %>/css",
+	"sass_html_output": "/assets/css",
+
+	"bower_path": "<%= paths.root %>/bower_components"
+}
