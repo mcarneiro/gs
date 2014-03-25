@@ -1,4 +1,4 @@
-#GS - Semantic Grid System v0.4
+#GS - Semantic Grid System v0.5
 Flexible and easy-to-use gridsystem for SASS.
 
 ## About this project
