@@ -20,7 +20,7 @@
 	"sass_source": "<%= paths.assets %>/sass",
 	"sass_watch": "<%= paths.assets %>/sass/**/*.scss",
 	"sass_output": "<%= paths.assets %>/css",
-	"sass_html_output": "/assets/css",
+	"sass_html_output": "assets/css",
 
 	"bower_path": "<%= paths.root %>/bower_components"
 }

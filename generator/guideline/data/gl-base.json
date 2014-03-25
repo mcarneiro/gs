@@ -1,9 +1,6 @@
 {
 	"title" : "Hyojun Guideline",
 	"description": "Documento com detalhes dos módulos do projeto",
-	"js": {
-		"core": "./bower_components/Hyojun.Guideline/assets/js/dist/guideline.js"
-	},
 	"css": [{
 		"url": "{{{sass_html_output}}}/example.css",
 		"media_query": "screen"
