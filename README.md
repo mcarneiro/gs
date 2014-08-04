@@ -173,7 +173,6 @@ Used to remove all registered grids.
 
 ## Roadmap
 
-* Create installer;
 * Better row mixin;
 
 ## Log history

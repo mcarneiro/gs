@@ -228,8 +228,6 @@ $gs-verbose: true !default;
 		$n: gs-value($grid, $gs-column-num);
 	}
 
-	// @debug "is? #{$grid} / #{unit(gs-value($grid, $gs-site-width))}";
-
 	@if gs-value($grid, $gs-site-width) != null {
 		@if unit(gs-value($grid, $gs-site-width)) == "%" {
 			@return gs-fluid-column($n, $grid) * 1%;
@@ -301,10 +299,18 @@ $gs-verbose: true !default;
 			$curr: gs-column($i, $grid: $grid);
 			@if $push {
 				.#{$prefix}push-prev-#{$i} {
-					margin-left: $curr + gs-gutter(2, $grid);
+					@if unit($curr) != "%" {
+						margin-left: $curr + gs-gutter(2, $grid);
+					} @else {
+						margin-left: $curr;
+					}
 				}
 				.#{$prefix}push-next-#{$i} {
-					margin-right: $curr + gs-gutter(1, $grid);
+					@if unit($curr) != "%" {
+						margin-right: $curr + gs-gutter(1, $grid);
+					} @else {
+						margin-right: $curr;
+					}
 				}
 			}
 		}
