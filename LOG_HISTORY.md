@@ -1,5 +1,10 @@
 #GS - Log History
 
+### 0.5.1
+* Fixed class generation for fluid grids;
+* Updated `!global` directives;
+* Updated compatibility list. **IMPORTANT - This version is not compatible with 3.2 anymore**.
+
 ### 0.5.0
 * Fixed fracionated numbers
 * Applied unit-test for functions
