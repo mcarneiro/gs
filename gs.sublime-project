@@ -10,17 +10,24 @@
 		{
 			"cmd":
 			[
+				"grunt",
 				"sass",
-				"-style compressed",
-				"--stop-on-error",
-				"--trace",
-				"--update",
-				"--load-path=${project_path}/bower_components",
-				"${project_path}/assets/sass:${project_path}/assets/css"
+				"--no-color"
 			],
 			"name": "SASS update",
 			"path": "/usr/local/bin:/usr/bin/",
 			"selector": "source.sass, source.scss"
+		},
+		{
+			"cmd":
+			[
+				"grunt",
+				"render-views",
+				"--no-color"
+			],
+			"name": "Render pages",
+			"path": "/usr/local/bin:/usr/bin/",
+			"selector": "text.html"
 		}
 	]
 }

@@ -5,7 +5,7 @@
 <!--[if gt IE 10]><!--> <html class="gl no-js" lang="pt-BR"> <!--<![endif]-->
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>GS examples</title>
+	<title>GS 0.5.1 examples</title>
 	<meta charset="utf-8">
 	<meta name="description" content="Gridsystem documentation and usage examples">
 	<meta name="keywords" content="">
@@ -35,7 +35,7 @@
 	<div class="gl-wrapper">
 		<header class="gl">
 			<div class="gl-content">
-				<h1 class="gl">GS examples</h1>
+				<h1 class="gl">GS 0.5.1 examples</h1>
 				<p class="gl">
 					Gridsystem documentation and usage examples
 				</p>
@@ -430,7 +430,7 @@
 -->
 <h3 id="Generating-classes" class="gl">Generating classes</h3>
 <p class="gl">
-	It's possible to generate classes bases on a previously registered grid. For now, there's 2 types of classes that it generates: <code class="gl">row</code> (for wrappers), <code class="gl">col</code> (with width) and <code class="gl">push</code> (with margin-left and margin-right).
+	It's possible to generate classes based on a previously registered grid. For now, there's 4 types of classes that it generates: <code class="gl">row</code> (for wrappers), <code class="gl">col</code> (with width) and <code class="gl">push</code> (with margin-left and margin-right). Note that they don't have the responsive behaviour by default.
 </p>
 <div class="gl-example example-classes">
 	<div class="d-row">
@@ -614,6 +614,55 @@
 &lt;/div&gt;
 &lt;div class=&quot;d-row&quot;&gt;
   &lt;div class=&quot;d-col-12&quot;&gt; 12 cols &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<p class="gl">
+	Example with mobile grid:
+</p>
+
+<div class="gl-example example-classes">
+	<div class="m-row">
+		<div class="m-col-2"> 2 cols </div>
+	</div>
+	<div class="m-row">
+		<div class="m-col-1"> 1 col </div>
+		<div class="m-col-1"> 1 col </div>
+	</div>
+</div>
+<pre class="gl"><code>&lt;div class=&quot;m-row&quot;&gt;
+  &lt;div class=&quot;m-col-2&quot;&gt; 2 cols &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-row&quot;&gt;
+  &lt;div class=&quot;m-col-1&quot;&gt; 1 col &lt;/div&gt;
+  &lt;div class=&quot;m-col-1&quot;&gt; 1 col &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<div class="gl-example example-classes">
+	<div class="m-row">
+		<div class="m-col-2"> 2 cols </div>
+	</div>
+	<div class="m-row">
+		<div class="m-col-1 m-push-prev-1"> 1 col <em>push prev 1</em> </div>
+	</div>
+</div>
+<pre class="gl"><code>&lt;div class=&quot;m-row&quot;&gt;
+  &lt;div class=&quot;m-col-2&quot;&gt; 2 cols &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-row&quot;&gt;
+  &lt;div class=&quot;m-col-1 m-push-prev-1&quot;&gt; 1 col &lt;em&gt;push prev 1&lt;/em&gt; &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<div class="gl-example example-classes example-next">
+	<div class="m-row">
+		<div class="m-col-1 m-push-next-1"> 1 col <em>push next 1</em> </div>
+	</div>
+	<div class="m-row">
+		<div class="m-col-2"> 2 cols </div>
+	</div>
+</div>
+<pre class="gl"><code>&lt;div class=&quot;m-row&quot;&gt;
+  &lt;div class=&quot;m-col-1 m-push-next-1&quot;&gt; 1 col &lt;em&gt;push next 1&lt;/em&gt; &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;m-row&quot;&gt;
+  &lt;div class=&quot;m-col-2&quot;&gt; 2 cols &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
 <!--

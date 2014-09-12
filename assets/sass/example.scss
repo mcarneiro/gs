@@ -34,6 +34,7 @@ $gl-do-override-grids: true;
 @include gl-gridsystem-example("desktop");
 
 @include gs-classes("desktop", "d-");
+@include gs-classes("mobile", "m-");
 
 %example {
 	@extend %example-col;
@@ -180,9 +181,11 @@ $gl-do-override-grids: true;
 }
 
 .example-classes {
+	.m-row,
 	.d-row {
 		margin-bottom: 1px;
 	}
+	.m-row > div,
 	.d-row > div {
 		@extend %example-col;
 		position: relative;
