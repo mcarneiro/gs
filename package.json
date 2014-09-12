@@ -1,0 +1,24 @@
+{
+  "name": "gs",
+  "version": "0.5.1",
+  "description": "Flexible and easy-to-use gridsystem for SASS.",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.8.1"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mcarneiro/gs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcarneiro/gs/issues"
+  },
+  "homepage": "http://mcarneiro.github.io/gs/"
+}

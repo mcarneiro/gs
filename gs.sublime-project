@@ -10,13 +10,9 @@
 		{
 			"cmd":
 			[
+				"grunt",
 				"sass",
-				"-style compressed",
-				"--stop-on-error",
-				"--trace",
-				"--update",
-				"--load-path=${project_path}/bower_components",
-				"${project_path}/sass:${project_path}/css"
+				"--no-color"
 			],
 			"name": "SASS update",
 			"path": "/usr/local/bin:/usr/bin/",

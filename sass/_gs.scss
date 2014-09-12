@@ -1,5 +1,5 @@
 // @author Marcelo Miranda Carneiro - mcarneiro@gmail.com
-// @version 0.5.0 https://github.com/mcarneiro/gs/#log-history
+// @version 0.5.1 https://github.com/mcarneiro/gs/#log-history
 
 // Usage
 // @include gs-register-grid(wide, 1306px, 14, 10px, auto);
@@ -86,8 +86,8 @@ $gs-verbose: true !default;
 	@if gs-label-exists($grid) == 0 {
 		@return 0;
 	}
-	$gs-column-width: null !default;
-	$gs-site-width: null !default;
+	$gs-column-width: null !default !global;
+	$gs-site-width: null !default !global;
 	$cols: gs-value($grid, $gs-column-num);
 	$g: gs-gutter(1, $grid);
 	$width: 0;
@@ -147,17 +147,17 @@ $gs-verbose: true !default;
 
 // Register grid system
 @mixin gs-clear-grid-list () {
-	$gs-labels: null;
-	$gs-site-width: null;
-	$gs-column-num: null;
-	$gs-width-break-point: null;
-	$gs-gutter-width: null;
+	$gs-labels: null !global;
+	$gs-site-width: null !global;
+	$gs-column-num: null !global;
+	$gs-width-break-point: null !global;
+	$gs-gutter-width: null !global;
 }
 @mixin gs-register-grid ($label, $width, $column-num, $gutter, $break-point: auto, $column: auto) {
 	$new-width: 0;
 	@if $gs-first-registered == false {
 		@include gs-clear-grid-list();
-		$gs-first-registered: true;
+		$gs-first-registered: true !global;
 	}
 	@if gs-index-of($label, $gs-labels) < 0 {
 
@@ -192,17 +192,17 @@ $gs-verbose: true !default;
 		}
 
 		@if $gs-labels == null {
-			$gs-labels: $label;
-			$gs-site-width: $width;
-			$gs-column-num: $column-num;
-			$gs-gutter-width: $gutter;
-			$gs-width-break-point: $break-point;
+			$gs-labels: $label !global;
+			$gs-site-width: $width !global;
+			$gs-column-num: $column-num !global;
+			$gs-gutter-width: $gutter !global;
+			$gs-width-break-point: $break-point !global;
 		} @else {
-			$gs-labels: append($gs-labels, $label);
-			$gs-site-width: append($gs-site-width, $width);
-			$gs-column-num: append($gs-column-num, $column-num);
-			$gs-gutter-width: append($gs-gutter-width, $gutter);
-			$gs-width-break-point: append($gs-width-break-point, $break-point);
+			$gs-labels: append($gs-labels, $label) !global;
+			$gs-site-width: append($gs-site-width, $width) !global;
+			$gs-column-num: append($gs-column-num, $column-num) !global;
+			$gs-gutter-width: append($gs-gutter-width, $gutter) !global;
+			$gs-width-break-point: append($gs-width-break-point, $break-point) !global;
 		}
 	}
 }
@@ -220,15 +220,13 @@ $gs-verbose: true !default;
 	@if gs-label-exists($grid) == 0 {
 		@return 0;
 	}
-	$gs-column-width: null !default;
-	$gs-site-width: null !default;
+	$gs-column-width: null !default !global;
+	$gs-site-width: null !default !global;
 	$width: 0;
 
 	@if $n == "all" {
 		$n: gs-value($grid, $gs-column-num);
 	}
-
-	// @debug "is? #{$grid} / #{unit(gs-value($grid, $gs-site-width))}";
 
 	@if gs-value($grid, $gs-site-width) != null {
 		@if unit(gs-value($grid, $gs-site-width)) == "%" {
@@ -301,10 +299,18 @@ $gs-verbose: true !default;
 			$curr: gs-column($i, $grid: $grid);
 			@if $push {
 				.#{$prefix}push-prev-#{$i} {
-					margin-left: $curr + gs-gutter(2, $grid);
+					@if unit($curr) != "%" {
+						margin-left: $curr + gs-gutter(2, $grid);
+					} @else {
+						margin-left: $curr;
+					}
 				}
 				.#{$prefix}push-next-#{$i} {
-					margin-right: $curr + gs-gutter(1, $grid);
+					@if unit($curr) != "%" {
+						margin-right: $curr + gs-gutter(1, $grid);
+					} @else {
+						margin-right: $curr;
+					}
 				}
 			}
 		}

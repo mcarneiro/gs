@@ -1,10 +1,17 @@
-#GS - Semantic Grid System v0.5
+#GS - Semantic Grid System v0.5.1
+
 Flexible and easy-to-use gridsystem for SASS.
 
 Check all examples in [http://mcarneiro.github.io/gs/](http://mcarneiro.github.io/gs/)
 
 ## About this project
-GS is a simple and flexible css grid-system that runs over SASS. It only does calculations around grid-systems and leave the box-modeling techniques to the developer.
+
+GS is a simple and flexible css grid-system that runs over SASS. It only does calculations around the grid-system rules, has the hability to create multiple grids and leave the box-modeling techniques to the developer. It was designed to be easy to use, focused on the advertisement agencies reality.
+
+## Compatibility
+
+Until GS `0.5.0` it was compatible from 3.2 ~ 3.3.
+GS `0.5.1` is compatible with 3.3+.
 
 ## How to use
 
@@ -173,8 +180,8 @@ Used to remove all registered grids.
 
 ## Roadmap
 
-* Create installer;
 * Better row mixin;
+* Update the registering object to SASS map;
 
 ## Log history
 
