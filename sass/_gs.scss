@@ -20,40 +20,47 @@ $gs-verbose: true !default;
 // Get values by label
 @function gs-index-of ($item, $list) {
 	$count: 0;
+	$ret: -1;
+
 	@each $curr in $list {
 		$count: $count+1;
 		@if $curr == $item {
-			@return $count;
+			$ret: $count;
 		}
 	}
-	@return -1;
+	@return $ret;
 }
 
 @function gs-label-exists ($grid) {
+	$ret: 1;
 	@if gs-index-of($grid, $gs-labels) < 0 {
 		@if $gs-verbose {
 			@warn "[gs-label-exists] Media \"#{$grid}\" was not found.";
 		}
-		@return 0;
+		$ret: 0;
 	}
-	@return 1;
+	@return $ret;
 }
+
 // Get values by label
 @function gs-value ($label: nth($gs-labels, 1), $l: $gs-site-width) {
-	@if gs-label-exists($label) == 0 {
-		@return null;
-	}
 	$count: 0;
+	$ret: 0;
+
+	@if gs-label-exists($label) == 0 {
+		@return $ret;
+	}
+
 	@each $item in $gs-labels {
 		$count: $count + 1;
 		@if $label == $item {
 			@if $count > length($l) {
 				$count: 1;
 			}
-			@return nth($l, $count);
+			$ret: nth($l, $count);
 		}
 	}
-	@return null;
+	@return $ret;
 }
 
 // convert to unit-less number
@@ -116,12 +123,14 @@ $gs-verbose: true !default;
 	@if $n > $cols {
 		$n: $cols
 	}
+
 	@if $n < 1 {
 		@return max((($g + $width) * floor($n)) - $g, 0) + $extra + ($width * $col-diff);
 	} @else {
-		@if $width * $col-diff > 0 {
+		@if gs-to-number($width * $col-diff) > 0 {
 			$extra: $extra + ($width * $col-diff) + $g;
 		}
+
 		@return (($g + $width) * floor($n) - $g) + $extra;
 	}
 }
@@ -137,7 +146,7 @@ $gs-verbose: true !default;
 	@if $n > $cols {
 		$n: $cols
 	}
-	$width: $n / $cols * 100; //gs-to-number(gs-value($grid, $gs-site-width))
+	$width: $n / $cols * 100%; //gs-to-number(gs-value($grid, $gs-site-width))
 
 	@return $width;
 }
@@ -230,7 +239,7 @@ $gs-verbose: true !default;
 
 	@if gs-value($grid, $gs-site-width) != null {
 		@if unit(gs-value($grid, $gs-site-width)) == "%" {
-			@return gs-fluid-column($n, $grid) * 1%;
+			@return gs-fluid-column($n, $grid);
 		}
 	}
 	@return gs-fixed-column($n, $grid, $extra);
